@@ -86,7 +86,7 @@ const SinglePost = () => {
     <div className="mt-[60px] w-full">
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
-        <div className="w-full lg:max-w-[1152px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0 py-[40px] md:py-[80px] lg:py-[100px]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <button
         className="flex w-fit items-center bg-white p-3 rounded-[8px] border border-[#D2D2CF] shadow-backButton mb-8"
         onClick={()=> navigate(-1)}
@@ -94,14 +94,14 @@ const SinglePost = () => {
            <img src={Arrow} alt="" />
         <p>Back</p>
       </button>
-          <p className="text-[24px] font-bold leading-[32px] tracking-[-0.96px] md:text-[32px] md:leading-[39px] md:tracking-[-1px] lg:text-[48px] lg:leading-[40px] text-[#2E2E27] w-fit">
+          <p className="text-[24px] font-bold leading-[32px] tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px] text-[#2E2E27] w-fit">
             How long does it take to create a beautiful presentation  design?
           </p>
         </div>
       </div>
 
       <div className="bg-[#FFF]">
-        <div className="w-full lg:max-w-[1152px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0 py-[40px] md:py-[80px] lg:py-[100px]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <div className="">
 
           </div>
@@ -110,9 +110,9 @@ const SinglePost = () => {
 
       {/* Recent Posts */}
       <div className="bg-[#F2F1E8]">
-        <div className="w-full lg:max-w-[1152px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0 py-[40px] md:py-[80px] lg:py-[100px]">
-         <p className="text-[24px] font-bold leading-8 tracking-[-0.96px] mb-5 md:text-[32px] md:leading-[39px] md:tracking-[-1px] md:mb-10 lg:text-[48px] lg:leading-10 lg:mb-[50px]">Most Recent</p>
-          <div className="grid gap-[54px] md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-3 lg:gap-y-[50px]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
+         <p className="text-[24px] font-bold leading-8 tracking-[-0.96px] mb-5 tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] tablet:mb-10 laptop:text-[48px] laptop:leading-10 laptop:mb-[50px]">Most Recent</p>
+          <div className="grid gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
           {posts.map((post, i) =>( isSmallScreen ? i < 2 : i < 3) && <BlogCard key={post.id} id={post.id} date={post.date} image={post.img} desc={post.desc} />)}
 
           </div>

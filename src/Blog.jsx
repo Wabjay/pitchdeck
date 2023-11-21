@@ -78,7 +78,7 @@ const Blog = () => {
     <div className="mt-[60px] w-full">
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
-        <div className="w-full lg:max-w-[1152px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0 py-[40px] md:py-[80px] lg:py-[100px]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <p className="text-[64px] font-bold leading-[72px] tracking-[-2px] text-[#2E2E27] mx-auto w-fit">
             Blog
           </p>
@@ -86,8 +86,8 @@ const Blog = () => {
       </div>
 
       <div className="bg-[#FFF]">
-        <div className="w-full lg:max-w-[1152px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0 py-[40px] md:py-[80px] lg:py-[100px]">
-          <div className="grid gap-[54px] md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-3 lg:gap-y-[50px]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
+          <div className="grid gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
             {posts.map(post => <BlogCard key={post.id} id={post.id} date={post.date} image={post.img} desc={post.desc} />)}
           </div>
         </div>
