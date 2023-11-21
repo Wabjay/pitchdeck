@@ -43,7 +43,7 @@ const Faq = () => {
     <ul class="w-full mx-auto mt-20 divide-y">
    {faqs.map(faq => <li key={faq.question}>
         <details class="group mb-6 p-6 bg-white border border-[#D2D2CF] rounded-[12px]">
-       <summary class="flex w-full mb-2 justify-between items-center font-medium marker:content-none hover:cursor-pointer">
+       <summary class="flex w-full justify-between items-center font-medium marker:content-none hover:cursor-pointer">
 
          <span className='text-[#121416] text-[14px] leading-[20px] font-[600]  tablet:text-[16px] tablet:leading-[22px] laptop:text-[20px] laptop:leading-[28px] laptop:font-bold'>{faq.question}</span>
       
@@ -54,7 +54,7 @@ const Faq = () => {
        </summary>
 
             <article class="">
-                <p className='text-[14px] leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-[28px] text-[#50555B] w-[90%]'>
+                <p className='text-[14px] pt-2 leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-[28px] text-[#50555B] w-[90%]'>
                   {faq.answer}
                 </p>
             </article>
