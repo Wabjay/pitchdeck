@@ -1,0 +1,34 @@
+sections to work on
+
+
+Navbar-
+links
+
+Hero section-
+Text and button
+
+carousel-(2)
+images-(7)
+
+presentation-
+text and 
+cards-(3)
+image and text
+
+works-
+cards -
+with image - (4)
+without image - (2)
+
+pricing-
+card - (3)
+
+faq-
+accordions
+
+waitlist-
+Text and button
+
+footer-
+list-
+links
