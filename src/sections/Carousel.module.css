@@ -9,7 +9,7 @@
   
   .sliderContent {
     /* display: inline-block; */
-    animation: marquee 5s infinite linear;
+    animation: marquee 15s infinite linear;
   }
   
   @keyframes marquee {

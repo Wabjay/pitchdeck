@@ -12,6 +12,7 @@ import Navbar from "./sections/Navbar";
 import AdminBlog from "./admin/Blog";
 import Blog from './Blog';
 import SinglePost from "./SinglePost";
+import { ScrollToTop } from "./component/ScrollToTop";
 
 function App() {
   const [user, error] = useAuthState(auth);
@@ -20,6 +21,8 @@ function App() {
     <div className="App">
 
      <Router>
+     <ScrollToTop/>
+
      {!user && <Navbar/>}
       <Routes>
 
