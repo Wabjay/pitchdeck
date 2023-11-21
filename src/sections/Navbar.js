@@ -19,7 +19,7 @@ const toggleNavbar = ()=>{
             <nav className="sticky top-0 z-10  block items-center  h-[40px] my-[10px]">
                 <div
                     className="flex flex-wrap place-self-center items-center justify-between  w-full laptop:max-w-[1152px] mx-auto">
-                    <Link to='/' className="flex items-center">
+                    <Link to='/' className="flex items-center" onClick={toggleNavbar}>
                         <img src={Logo} className="w-[149px] h-[37px] mr-3"
                             alt="PPTDesign Logo" />
                     </Link>
