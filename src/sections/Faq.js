@@ -40,10 +40,10 @@ const Faq = () => {
     <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
     <p className='text-center  mb-5 tablet:mb-10 laptop:mb-[50px] text-[#0E0829] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px]'>Frequently asked Questions</p>
 
-    <ul class="w-full mx-auto mt-20 divide-y">
+    <ul class="w-full mx-auto mt-20">
    {faqs.map(faq => <li key={faq.question}>
         <details class="group mb-6 p-6 bg-white border border-[#D2D2CF] rounded-[12px]">
-       <summary class="flex w-full justify-between items-center font-medium marker:content-none hover:cursor-pointer">
+       <summary class="flex w-full justify-between items-center font-medium  hover:cursor-pointer">
 
          <span className='text-[#121416] text-[14px] leading-[20px] font-[600]  tablet:text-[16px] tablet:leading-[22px] laptop:text-[20px] laptop:leading-[28px] laptop:font-bold'>{faq.question}</span>
       
