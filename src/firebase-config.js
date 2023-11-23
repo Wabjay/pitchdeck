@@ -18,13 +18,13 @@ import {getStorage} from 'firebase/storage';
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA84MgSQbtPBHl1zUMOsIeq9VHG44s_CL8",
-  authDomain: "pptdesign-993d2.firebaseapp.com",
-  projectId: "pptdesign-993d2",
-  storageBucket: "pptdesign-993d2.appspot.com",
-  messagingSenderId: "283844681329",
-  appId: "1:283844681329:web:05ebbb7ae8fe40b69045d0",
-  measurementId: "G-2RFTPXEJFN"
+  apiKey: "AIzaSyDU28sfqPfCGUuU3NXemz-DWKHkVS42J-k",
+  authDomain: "pptdesigner-9ccaf.firebaseapp.com",
+  projectId: "pptdesigner-9ccaf",
+  storageBucket: "pptdesigner-9ccaf.appspot.com",
+  messagingSenderId: "519267137891",
+  appId: "1:519267137891:web:a2053706e1f9cde1737b56",
+  measurementId: "G-DM4R26DTHT"
 };
 
 

@@ -33,12 +33,12 @@ const SingleCarousel = ({images, direction}) => {
     <FullWidth>
       <Height height={0}>
         <Marquee
-          velocity={15}
+          velocity={80}
           direction= {direction}
           minScale={0.7}
           styles={{gap: "10px"}}
         >
-          {times(7, String).map((id) => (
+          {times(9, String).map((id) => (
             <Box key={`marquee-example-review-${id}`}>    
                 <div className="">
                   <img src={images[id]} alt=""  className={`w-[155px] h-[108px] tablet:w-[206px] tablet:h-[144px] laptop:w-[286px] laptop:h-[200px] mr-3 tablet:mr-4 laptop:mr-6`} />

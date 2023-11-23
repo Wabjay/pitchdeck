@@ -13,11 +13,15 @@ import Image11 from "./../assets/image11.png"
 import Image12 from "./../assets/image12.png"
 import Image13 from "./../assets/image13.png"
 import Image14 from "./../assets/image14.png"
+import Image15 from "./../assets/image13.png"
+import Image16 from "./../assets/image14.png"
+import Image17 from "./../assets/image7.png"
+import Image18 from "./../assets/image6.png"
 import SingleCarousel from "../component/SingleCarousel";
 
 
-const topImages = [Image1,Image2,Image3,Image4,Image5,Image6,Image7]
-const bottomImages = [Image8,Image9,Image10,Image11,Image12,Image13,Image14]
+const topImages = [Image1,Image2,Image3,Image4,Image5,Image6,Image7,Image15,Image16]
+const bottomImages = [Image8,Image9,Image10,Image11,Image12,Image13,Image14,Image17,Image18]
 
 const Carousel = () => {
 

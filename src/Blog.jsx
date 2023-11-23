@@ -85,6 +85,7 @@ const Blog = () => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log((data.docs))
       console.log(doc, data)
       setIsLoading(false)
     };
@@ -107,14 +108,24 @@ const Blog = () => {
       <div className="bg-[#FFF]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <div className="grid gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
-            {postLists.map((post) => (
+            {postLists && postLists.map((post) => (<>
+            {console.log(postLists)}
               <BlogCard
-                key={post.id}
+                key={post.title}
                 id={post.id}
                 date={post.date}
-                image={post.image}
+                image={post?.image}
                 desc={post.title}
-              />
+              /> 
+              {/* <BlogCard
+              key={post.id}
+              id={post.id}
+              date={post.date}
+              image={post?.img}
+              desc={post.desc}
+            />*/}
+                        </>
+
             ))}
           </div>
         </div>
