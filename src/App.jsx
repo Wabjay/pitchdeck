@@ -28,16 +28,16 @@ function App() {
      <Router>
      <ScrollToTop/>
 
-     {(!user && pathname !== "/login" ) && <Navbar/>}
+     {(pathname !== "/login" ) && <Navbar/>}
       <Routes>
 
         <Route path="/login" element={<Login/>} />
-                    <Route path="*" element={user ? <AdminBlog/> : <Home />}/>
+                    <Route path="*" element={<Home />}/>
                     <Route path="/blog" element={<Blog /> }/>
-          <Route path="/blogpost/:id" element={<SinglePost />} />
+          <Route path="/blogpost/:post" element={<SinglePost />} />
 
           {user && <Route path="/adminBlog" element={<AdminBlog />} /> }
-          
+
         </Routes>
         {/* <Footer /> */}
         {(!user && pathname !== "/login" ) && <Waitlist/>}

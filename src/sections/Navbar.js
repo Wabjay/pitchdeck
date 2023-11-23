@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "../firebase-config";
+
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
@@ -8,6 +11,7 @@ import Ham from "./../assets/hambugger.svg"
 const Navbar = () => {
     const [visibility, setVisibility] = useState(false)
     const isSmallScreen = useMediaQuery({ query: '(max-width: 1023px)' })
+    const [user, error] = useAuthState(auth);
 
 
 const toggleNavbar = ()=>{
@@ -35,11 +39,14 @@ const toggleNavbar = ()=>{
                                     <li className="" onClick={toggleNavbar}> <Link to='/blog' className="text-[#0A0A0A] font-sm leading-5 font-medium">Blog</Link> </li>
                                     <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#pricing' className="text-[#0A0A0A] font-sm leading-5 font-medium">Pricing</HashLink> </li>
 
-                                    <li className="navBlock laptop:px-0" onClick={toggleNavbar}>
-                                    <HashLink smooth to= "/#waitlist"
-                                            className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
-                                            Hire a designer</HashLink>
-                                    </li>
+                                            <li className="navBlock laptop:px-0" onClick={toggleNavbar}>
+                                                {user ? <Link smooth to="/adminBlog"
+                                                    className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
+                                                    Create Post</Link> :
+                                                    <HashLink smooth to="/#waitlist"
+                                                        className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
+                                                        Hire a designer</HashLink>}
+                                            </li>
 
                                 </ul>
                                 </div>}
@@ -52,9 +59,13 @@ const toggleNavbar = ()=>{
                                     <li className=""> <HashLink smooth to='/#pricing'  className="text-[#0A0A0A] font-sm leading-5 font-medium">Pricing</HashLink> </li>
 
                                     <li className="navBlock laptop:px-0">
-                                    <HashLink smooth to="/#waitlist"
+                                        {user ? <Link smooth to="/adminBlog"
                                             className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
-                                            Hire a designer</HashLink>
+                                             Create Post</Link> : 
+                                            <HashLink smooth to="/#waitlist"
+                                            className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
+                                            Hire a designer</HashLink>}
+                                    
                                     </li>
 
                                 </ul>}

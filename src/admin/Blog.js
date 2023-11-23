@@ -5,12 +5,17 @@ import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db, auth } from "../firebase-config";
 import { Upload, Button } from "antd";
+import { useNavigate } from "react-router-dom";
+
 
 
 function AdminBlog({ isAuth }) {
   const [antPics, setAntPics] = useState([]);
   const [loading, setLoading] = useState(false);
   const [urls, setUrls] = useState([]);
+  const [progress, setProgress] = useState(0);
+
+  let navigate = useNavigate();
 
   const handleAnt = e => {
     console.log(e.file.originFileObj);
@@ -41,14 +46,13 @@ function AdminBlog({ isAuth }) {
 
 
   const [formData, setFormData] = useState({
-    title: "",
+    // title: "",
     postText: "",
     author: {},
     image: "",
     date: Timestamp.now().toDate(),
   });
 
-  const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -102,7 +106,7 @@ function AdminBlog({ isAuth }) {
             date:  date,
           })
             .then(() => {
-              // navigate("/blogadmin");
+              navigate("/blog");
               console.log(postsCollectionRef)
               setFormData({
                 title: "",
@@ -134,10 +138,23 @@ function AdminBlog({ isAuth }) {
             Create A Post
           </p>
         </div>
+
+       
       </div>
        
       <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           
+
+
+      <div className="w-full mb-4 tablet:mb-6 laptop:mb-8">
+          <input
+          name="title"
+            placeholder="Title..."
+            value={formData.title}
+              onChange={(e) => handleChange(e)}
+              className="w-full px-4 py-2 border border-[#6e6e74] rounded-md"
+          />
+      </div>
         <div className="w-full mb-4 tablet:mb-6 laptop:mb-8">
       
         <Upload onChange={handleImageChange}
