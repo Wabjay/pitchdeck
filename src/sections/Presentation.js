@@ -1,4 +1,3 @@
-import React from 'react'
 import PresentationCard from '../component/PresentationCard'
 import Plan from "./../assets/plan.svg"
 import Design from "./../assets/design.svg"

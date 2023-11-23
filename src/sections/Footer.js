@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from "./../assets/Logo.svg"
 import { HashLink } from 'react-router-hash-link';
 

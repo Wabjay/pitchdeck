@@ -1,41 +1,7 @@
-// import Airtable from "airtable";
-// import { useState } from "react";
-
 
 
 const Waitlist = () => {
-  // let Base_id = 'appr2fKF77qI95I1Z'
-  // let Api_key = 'keyAs1krG80fTzo0c'
-
-  // Airtable.configure({
-  //   endpointUrl: 'https://api.airtable.com',
-  //   apiKey: Api_key
-  // });
-
-  // const Base = Airtable.base(Base_id)
-  // const [email, setEmail] = useState('')
-  // const [submitted, setSubmitted] = useState(false)
-
-
-
-  // const submit = (e) => {
-  //   e.preventDefault();
-  //   Base('Waitlist').create(
-  //     { email: email },
-  //     { typecast: true },
-  //     function (err, record) {
-  //       if (err) {
-  //         console.error(err);
-  //         return;
-  //       }
-  //       setEmail("")
-  //       console.log("Message sent successfully");
-  //       setSubmitted(true)
-  //     });
-
-  // }
-
-
+ 
   return (
     <div className='bg-[#061F13] ' id='waitlist'>
     <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 text-center pt-[40px] pb-[28px] tablet:pt-[80px] tablet:pb-[50px] laptop:pt-[100px] laptop:pb-[56px]'>

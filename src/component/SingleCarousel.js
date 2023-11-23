@@ -11,6 +11,7 @@ const Height = styled.div`
 
 const Box = styled.div`
   padding: ${(props) => props.scale * 25}px;
+  padding-bottom: 0
 `;
 
 

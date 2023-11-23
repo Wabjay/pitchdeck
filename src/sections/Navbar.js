@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'

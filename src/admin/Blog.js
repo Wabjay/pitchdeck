@@ -4,9 +4,7 @@ import '../../node_modules/react-quill/dist/quill.snow.css'
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db, auth } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
-import { Progress, Form, Upload, Button } from "antd";
-// import { TailSpin } from 'react-loader-spinner'
+import { Upload, Button } from "antd";
 
 
 function AdminBlog({ isAuth }) {
@@ -56,7 +54,6 @@ function AdminBlog({ isAuth }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // let navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setFormData({ ...formData, image: e.file });
@@ -131,11 +128,17 @@ function AdminBlog({ isAuth }) {
   return (
     <div className="BlogPage">
       
-      <div className="cpContainer">
-    
-        <h1>Create A Post</h1>
-
-        <div className="inputGp">
+      <div className="bg-[#EEFCF5]">
+        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
+          <p className="text-[64px] font-bold leading-[72px] tracking-[-2px] text-[#2E2E27] mx-auto w-fit">
+            Create A Post
+          </p>
+        </div>
+      </div>
+       
+      <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
+          
+        <div className="w-full mb-4 tablet:mb-6 laptop:mb-8">
       
         <Upload onChange={handleImageChange}
         maxCount={1}
@@ -153,12 +156,11 @@ function AdminBlog({ isAuth }) {
     onChange={handleBody}
     value={body} 
     />
-        <button  className="btn search_btn" style={{marginTop: "40px"}} onClick={handlePublish}> Submit Post
+        <button  className="border border-[#2E2E2F] bg-[#EEFCF5] rounded-md p-2 px-4 text-lg text-[#2E2E2F] font-bold hover:bg-slate-300" style={{marginTop: "40px"}} onClick={handlePublish}> Submit Post
        </button>
         
-
+</div>
       </div>
-    </div>
   );
 }
 

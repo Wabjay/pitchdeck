@@ -1,4 +1,3 @@
-import React from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -17,24 +16,32 @@ import { ScrollToTop } from "./component/ScrollToTop";
 function App() {
   const [user, error] = useAuthState(auth);
 
+
+  const pathname = window.location.pathname
+  console.log(pathname)
+
+
+
   return (
     <div className="App">
 
      <Router>
      <ScrollToTop/>
 
-     {!user && <Navbar/>}
+     {(!user && pathname !== "/login" ) && <Navbar/>}
       <Routes>
 
         <Route path="/login" element={<Login/>} />
-          <Route path="/blog" element={<Blog /> }/>
-          <Route path="/adminBlog" element={<AdminBlog />} />
+                    <Route path="*" element={user ? <AdminBlog/> : <Home />}/>
+                    <Route path="/blog" element={<Blog /> }/>
           <Route path="/blogpost/:id" element={<SinglePost />} />
-          <Route path="*" element={user ? <AdminBlog/> : <Home />}/>
+
+          {user && <Route path="/adminBlog" element={<AdminBlog />} /> }
+          
         </Routes>
         {/* <Footer /> */}
-        {!user && <Waitlist/>}
-<Footer />
+        {(!user && pathname !== "/login" ) && <Waitlist/>}
+{(pathname !== "/login" ) &&<Footer />}
      </Router>
      {console.log(user)}
         </div>

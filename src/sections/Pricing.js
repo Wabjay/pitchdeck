@@ -1,4 +1,3 @@
-import React from 'react'
 import {PriceCard, SupportCard} from '../component/PriceCard'
 
 const Pricing = () => {
