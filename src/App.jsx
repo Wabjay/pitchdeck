@@ -28,7 +28,7 @@ function App() {
      <Router>
      <ScrollToTop/>
 
-     {(pathname !== "/login" ) && <Navbar/>}
+     {<Navbar/>}
       <Routes>
 
         <Route path="/login" element={<Login/>} />
