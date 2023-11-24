@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
                     <div className='flex flex-col gap-4'>
                       <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>CONTACT INFORMATION</p>
-                      <a href="mailto:pixelgum.design@gmail.com" className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Pixelgum.design@gmail.com</a>
+                      <a href="mailto:pixelgum.design@gmail.com" className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>pptdesigner01@gmail.com</a>
                     </div>
     </div>
     </div>
