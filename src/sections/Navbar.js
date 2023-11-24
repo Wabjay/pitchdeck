@@ -34,8 +34,8 @@ const toggleNavbar = ()=>{
                             {visibility && 
                             <div className='fixed top-[60px] left-0 h-full bg-white w-full py-4 px-6 tablet:px-8'>
                                 <ul className="flex flex-col font-medium gap-8">
-                                    <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#features' className="text-[#0A0A0A] text-sm leading-5 font-medium">Features</HashLink> </li>
-                                    <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#works' className="text-[#0A0A0A] text-sm leading-5 font-medium">How it works</HashLink> </li>
+                                    <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#works' className="text-[#0A0A0A] text-sm leading-5 font-medium">Our Works</HashLink> </li>
+                                    <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#presentation' className="text-[#0A0A0A] text-sm leading-5 font-medium">How it works</HashLink> </li>
                                     <li className="" onClick={toggleNavbar}> <Link to='/blog' className="text-[#0A0A0A] text-sm leading-5 font-medium">Blog</Link> </li>
                                     <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#pricing' className="text-[#0A0A0A] text-sm leading-5 font-medium">Pricing</HashLink> </li>
 
@@ -58,8 +58,8 @@ const toggleNavbar = ()=>{
                             </>
                                 :
                                 <ul className="flex font-medium flex-row items-center gap-[56px]">
-                                    <li className=""> <HashLink smooth to='/#features'  className="text-[#0A0A0A] text-sm leading-5 font-medium">Features</HashLink> </li>
-                                    <li className=""> <HashLink smooth to='/#works'  className="text-[#0A0A0A] text-sm leading-5 font-medium">How it works</HashLink> </li>
+                                    <li className=""> <HashLink smooth to='/#works'  className="text-[#0A0A0A] text-sm leading-5 font-medium">Our Works</HashLink> </li>
+                                    <li className=""> <HashLink smooth to='/#presentation'  className="text-[#0A0A0A] text-sm leading-5 font-medium">How it works</HashLink> </li>
                                     <li className="">  <Link to='/blog' className="text-[#0A0A0A] text-sm leading-5 font-medium">Blog</Link> </li>
                                     <li className=""> <HashLink smooth to='/#pricing'  className="text-[#0A0A0A] text-sm leading-5 font-medium">Pricing</HashLink> </li>
 

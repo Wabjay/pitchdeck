@@ -11,7 +11,7 @@ import FrontierPdf from "./../assets/pdf/frontier yileds.pdf"
 import SmilePdf from "./../assets/pdf/smile.pdf"
 const Works = () => {
   return (
-    <div className='bg-[#EEFCF5]' id='features'>
+    <div className='bg-[#EEFCF5]' id='works'>
     <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
       <p className='mb-[13px] text-[#2E2E27] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px]'>Our recent work </p>
       <p className='mb-[26px] tablet:mb-10 laptop:mb-[50px] text-[#64645F] text-[16px] leading-6 tablet:text-[20px] tablet:leading-[28px]'>Take a look at some of the works we have done  and what our clients say</p>

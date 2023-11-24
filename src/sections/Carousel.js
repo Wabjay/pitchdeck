@@ -13,10 +13,10 @@ import Image11 from "./../assets/image11.png"
 import Image12 from "./../assets/image12.png"
 import Image13 from "./../assets/image13.png"
 import Image14 from "./../assets/image14.png"
-import Image15 from "./../assets/image13.png"
-import Image16 from "./../assets/image14.png"
-import Image17 from "./../assets/image7.png"
-import Image18 from "./../assets/image6.png"
+import Image15 from "./../assets/image15.png"
+import Image16 from "./../assets/image16.png"
+import Image17 from "./../assets/image17.png"
+import Image18 from "./../assets/image18.png"
 import SingleCarousel from "../component/SingleCarousel";
 
 

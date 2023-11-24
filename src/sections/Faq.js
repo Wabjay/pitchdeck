@@ -2,11 +2,11 @@
 const Faq = () => {
 
   const faqs =[{
-    question: "What is Ppt designer",
+    question: "What is Ppt designer?",
     answer: "Ppt designer helps your business create wonderful pitch deck and presentation design for your next project and help your business standout."
   },
   {
-    question: "Who is this for",
+    question: "Who is this for?",
     answer: "PPtdesigner is for companies or business people that find it difficult in creating designs for their powerpoint presentation."
   },
   {
@@ -14,7 +14,7 @@ const Faq = () => {
     answer: "Absolutely! We understand the importance of consistent branding across all communication channels. Our designers can seamlessly integrate your company's logo, color palette, typography, and other branding elements into the pitch deck design to ensure a cohesive visual identity."
   },
   {
-    question: "Which payment options and currencies do you accept",
+    question: "Which payment options and currencies do you accept?",
     answer: "We accept all payments and currencies via paypal and credit card. We use lemon squeezy to accept payments, Contact us if you need an alternative payment methods."
   },
   {
@@ -49,12 +49,12 @@ const Faq = () => {
     <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
     <p className='text-center  mb-5 tablet:mb-10 laptop:mb-[50px] text-[#0E0829] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px]'>Frequently asked Questions</p>
 
-    <ul class="w-full mx-auto mt-20 divide-y">
+    <ul class="w-full mx-auto divide-y">
    {faqs.map(faq => <li key={faq.question}>
         <details class="group mb-6 p-6 bg-white border border-[#D2D2CF] rounded-[12px]">
        <summary class="flex w-full justify-between items-center font-medium marker:content-none hover:cursor-pointer">
 
-         <span className='text-[#121416] text-[14px] leading-[20px] font-[600]  tablet:text-[16px] tablet:leading-[22px] laptop:text-[20px] laptop:leading-[28px] laptop:font-bold'>{faq.question}</span>
+         <span className='w-[90%] text-[#121416] text-[14px] leading-[20px] font-[600]  tablet:text-[16px] tablet:leading-[22px] laptop:text-[20px] laptop:leading-[28px] laptop:font-bold'>{faq.question}</span>
       
          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
            <rect x="17" y="8" width="2" height="16" rx="1" transform="rotate(90 17 8)" fill="#121416" stroke="#121416" />
