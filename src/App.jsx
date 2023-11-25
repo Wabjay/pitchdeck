@@ -3,15 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase-config";
 import Login from "./admin/Login";
-import Home from "./Home";
+import Home from "./pages/Home";
 import Waitlist from "./sections/Waitlist";
 import Footer from "./sections/Footer";
 import Navbar from "./sections/Navbar";
 import AdminBlog from "./admin/Blog";
-import Blog from "./Blog";
-import SinglePost from "./SinglePost";
+import Blog from "./pages/Blog";
+import SinglePost from "./pages/SinglePost";
 import { ScrollToTop } from "./component/ScrollToTop";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Policy from "./pages/Policy";
+import Terms from "./pages/Terms";
 
 function App() {
   const [user, error] = useAuthState(auth);
@@ -30,6 +32,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/policy" element={<Policy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/blogpost/:post" element={<SinglePost />} />
 
             {user && <Route path="/adminBlog" element={<AdminBlog />} />}

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate  } from 'react-router-dom';
 import { doc, getDoc, collection, getDocs } from "firebase/firestore"; 
-import { db } from "./firebase-config";
+import { db } from "../firebase-config";
 import { useMediaQuery } from 'react-responsive'
-import Photo from "./assets/blogImg.png"
-import Photo2 from "./assets/blogImg2.png"
-import BlogCard from "./component/BlogCard";
-import Arrow from "./assets/arrowRight.svg"
+import Photo from "../assets/blogImg.png"
+import Photo2 from "../assets/blogImg2.png"
+import BlogCard from "../component/BlogCard";
+import Arrow from "../assets/arrowRight.svg"
 
 const SinglePost = () => {
 

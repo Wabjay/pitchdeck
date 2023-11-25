@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getDocs, collection, doc, orderBy } from "firebase/firestore";
-import { db } from "./firebase-config";
-import Photo from "./assets/blogImg.png"
-import Photo2 from "./assets/blogImg2.png"
-import BlogCard from "./component/BlogCard";
+import { db } from "../firebase-config";
+import Photo from "../assets/blogImg.png"
+import Photo2 from "../assets/blogImg2.png"
+import BlogCard from "../component/BlogCard";
 
 const Blog = () => {
 

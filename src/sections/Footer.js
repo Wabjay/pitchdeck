@@ -1,5 +1,6 @@
 import Logo from "./../assets/Logo.svg"
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -19,8 +20,8 @@ const Footer = () => {
                     </div>
                     <div className='flex flex-col gap-4'>
                       <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>LEGAL</p>
-                      <HashLink smooth to='#' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Terms and Conditions</HashLink>
-                      <HashLink smooth to='#' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Privacy policy</HashLink>
+                      <Link  to='/terms' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Terms and Conditions</Link>
+                      <Link  to='/policy' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Privacy policy</Link>
                     </div>
                     <div className='flex flex-col gap-4'>
                       <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>CONTACT INFORMATION</p>
