@@ -1,6 +1,11 @@
 import {PriceCard, SupportCard} from '../component/PriceCard'
 
 const Pricing = () => {
+
+  const product = [
+    {plan:'Standard', price:'1200', color:'grey', text:"Design a presentation", link:"", benefits:["5-7 days turnaround time", "4 revisions", "10-15 pages presentation", "Customer support","Stock photos",'Stock photos']},
+    {plan:'Pro', price:'1500', color:'green', text:"Design a presentation", link:"", benefits:["5-7 days turnaround time", "Unlimited revisions", "Custom illustrations", "Customer support","Stock photos",'Stock photos']},
+  ]
   return (
     <div className='w-full' id='pricing'>
     <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px] desktop:px-0'>
@@ -11,8 +16,8 @@ const Pricing = () => {
    </div>
       
       <div className='flex flex-col gap-5 tablet:gap-[30px] laptop:flex-row laptop:gap-[30px]'>
-      <PriceCard plan='Standard' price='1200' color='grey' text="Design a presentation" link="" benefits={["5-7 days turnaround time", "4 revisions", "10-15 pages presentation", "Customer support","Stock photos",'Stock photos']}/>
-      <PriceCard plan='Pro' price='1500' color='green' text="Design a presentation" link="" benefits={["5-7 days turnaround time", "Unlimited revisions ", "Custom illustrations", "Customer support","Stock photos",'Stock photos']}/>
+      <PriceCard product={product[0]} />
+      <PriceCard product={product[1]}/>
      <SupportCard />
       
     </div>
