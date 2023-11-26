@@ -3,8 +3,8 @@ import {PriceCard, SupportCard} from '../component/PriceCard'
 const Pricing = () => {
 
   const product = [
-    {plan:'Standard', price:'1200', color:'grey', text:"Design a presentation", link:"", benefits:["5-7 days turnaround time", "4 revisions", "10-15 pages presentation", "Customer support","Stock photos",'Stock photos']},
-    {plan:'Pro', price:'1500', color:'green', text:"Design a presentation", link:"", benefits:["5-7 days turnaround time", "Unlimited revisions", "Custom illustrations", "Customer support","Stock photos",'Stock photos']},
+    {plan:'Standard', price:'1200', color:'grey', text:"Design a presentation", link:"https://olayanjuidris.gumroad.com/l/standard-plan?_gl=1*8udghh*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcwMTAyMzE2My43LjEuMTcwMTAyNDcwMC4wLjAuMA", benefits:["5-7 days turnaround time", "4 revisions", "10-15 pages presentation", "Customer support","Stock photos",'Stock photos']},
+    {plan:'Pro', price:'1500', color:'green', text:"Design a presentation", link:"https://olayanjuidris.gumroad.com/l/pro-plan?_gl=1*1xt6kcr*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcwMTAyMzE2My43LjEuMTcwMTAyNDY5OC4wLjAuMA", benefits:["5-7 days turnaround time", "Unlimited revisions", "Custom illustrations", "Customer support","Stock photos",'Stock photos']},
   ]
   return (
     <div className='w-full' id='pricing'>
