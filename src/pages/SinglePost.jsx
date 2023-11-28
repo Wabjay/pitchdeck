@@ -12,6 +12,8 @@ import { db } from "../firebase-config";
 import { useMediaQuery } from "react-responsive";
 import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
+import parse from "html-react-parser"
+import DOMPurify from "dompurify";
 
 const SinglePost = () => {
   let params = useParams();
@@ -31,6 +33,7 @@ const SinglePost = () => {
   const navigate = useNavigate();
 
   const isSmallScreen = useMediaQuery({ query: "(max-width: 1023px)" });
+
 
   console.log(params.post);
 
@@ -82,10 +85,15 @@ const SinglePost = () => {
           <div className="">
             <div className="my-6">
               {console.log(post?.postText)}
-              <p
+             <p
                 className="singlePost"
-                dangerouslySetInnerHTML={{ __html: post?.postText }}
+                dangerouslySetInnerHTML={{ __html: post?.postText}}
               ></p>
+                 {/* <div
+ dangerouslysetinnerhtml={{
+     __html: post?.postText,
+  }}>
+</div> */}
             </div>
           </div>
         </div>
