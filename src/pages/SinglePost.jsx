@@ -89,11 +89,6 @@ const SinglePost = () => {
                 className="singlePost"
                 dangerouslySetInnerHTML={{ __html: post?.postText}}
               ></p>
-                 {/* <div
- dangerouslysetinnerhtml={{
-     __html: post?.postText,
-  }}>
-</div> */}
             </div>
           </div>
         </div>
