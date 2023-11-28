@@ -27,14 +27,14 @@ code {
     monospace;
 }
 
-.singlePost p{
+.singlePost > p{
   padding: 16px 0;
   font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 24px;
 }
-.singlePost strong{
+.singlePost strong, .singlePost > h3{
   line-height: 24px;
 }
 
