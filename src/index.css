@@ -26,3 +26,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.singlePost p{
+  padding: 16px 0;
+  font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+}
+.singlePost strong{
+  line-height: 24px;
+}
+
+@media (min-width: 1024) {
+  .singlePost p{
+    font-size: 20px;
+  line-height: 28px;
+  }
+  .singlePost strong{
+    line-height: 28px;
+  }
+}
