@@ -37,7 +37,7 @@ const Blog = () => {
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 my-[40px] tablet:my-[80px] laptop:my-[100px]">
           <div className="grid gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
             {postLists &&
-              postLists.map((post) => (
+              postLists.map((post) => ( 
                 <>
                   <BlogCard
                     key={post.title}

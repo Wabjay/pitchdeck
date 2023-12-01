@@ -20,7 +20,7 @@ const Navbar = () => {
             <nav className="sticky top-0 z-10  block items-center  h-[40px] my-[10px]">
                 <div
                     className="flex flex-wrap place-self-center items-center justify-between  w-full laptop:max-w-[1152px] mx-auto">
-                    <Link to='/' className="flex items-center" onClick={toggleNavbar}>
+                    <Link to='/' className="flex items-center" onClick={()=> setVisibility(false)}>
                         <img src={Logo} className="w-[149px] h-[37px] mr-3"
                             alt="PPTDesign Logo" />
                     </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
                                             <li className="" onClick={toggleNavbar}> <Link to='/blog' className="text-[#0A0A0A] text-sm leading-5 font-medium">Blog</Link> </li>
                                             <li className="" onClick={toggleNavbar}> <HashLink smooth to='/#pricing' className="text-[#0A0A0A] text-sm leading-5 font-medium">Pricing</HashLink> </li>
 
-                                            <HashLink smooth to="/#waitlist" onClick={toggleNavbar}
+                                            <HashLink smooth to="/#pricing" onClick={toggleNavbar}
                                                 className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  text-sm leading-5 font-normal focus:outline-none ">
                                                 Hire a designer</HashLink>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                                     <li className="">  <Link to='/blog' className="text-[#0A0A0A] text-sm leading-5 font-medium">Blog</Link> </li>
                                     <li className=""> <HashLink smooth to='/#pricing' className="text-[#0A0A0A] text-sm leading-5 font-medium">Pricing</HashLink> </li>
 
-                                    <HashLink smooth to="/#waitlist"
+                                    <HashLink smooth to="/#pricing"
                                         className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  text-sm leading-5 font-normal focus:outline-none ">
                                         Hire a designer</HashLink>
 
