@@ -12,8 +12,7 @@ import { db } from "../firebase-config";
 import { useMediaQuery } from "react-responsive";
 import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
-import parse from "html-react-parser"
-import DOMPurify from "dompurify";
+
 
 const SinglePost = () => {
   let params = useParams();
@@ -32,7 +31,8 @@ const SinglePost = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 1023px)" });
+  // const isSmallScreen = useMediaQuery({ query: "(max-width: 1023px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
 
   console.log(params.post);
@@ -71,7 +71,7 @@ const SinglePost = () => {
             onClick={() => navigate(-1)}
             type="button"
           >
-            <img src={Arrow} alt="" />
+            <img src={Arrow} alt="" className="rotate-180"/>
             <p>Back</p>
           </button>
           <p className="capitalize text-[24px] font-bold leading-[32px] tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px] text-[#2E2E27] w-fit">
@@ -105,7 +105,7 @@ const SinglePost = () => {
             {postLists &&
               postLists.map(
                 (post, i) =>
-                  (isSmallScreen ? i < 2 : i < 3) &&
+                  (isBigScreen ? i < 3 : i < 2) &&
                   post.id !== params.post && (
                     <>
                       {console.log(post)}
