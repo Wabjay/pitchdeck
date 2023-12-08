@@ -21,6 +21,8 @@
     "react-dom": "^18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-firebase-hooks": "^5.1.1",
+    "react-ga": "^3.3.1",
+    "react-helmet": "^6.1.0",
     "react-marquee-slider": "^1.1.5",
     "react-quill": "^2.0.0",
     "react-responsive": "^9.0.2",
@@ -35,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "mv build/snap-preload-manifest.json build/snap-manifest.json && npm run create-sitemap",
+    "create-sitemap": "node scripts/create-sitemap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +66,7 @@
     "@types/react-draft-wysiwyg": "^1.13.7",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.3.5"
   }
 }
