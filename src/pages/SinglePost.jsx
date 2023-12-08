@@ -12,11 +12,12 @@ import { db } from "../firebase-config";
 import { useMediaQuery } from "react-responsive";
 import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
+import MetadataComponent from "../component/Metadata";
 
 
 const SinglePost = () => {
   let params = useParams();
-  console.log(params.post);
+  // console.log(params.post);
 
   const [post, setPost] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -35,9 +36,9 @@ const SinglePost = () => {
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
 
-  console.log(params.post);
+  // console.log(params.post);
 
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     // Get all Post
@@ -56,6 +57,8 @@ const SinglePost = () => {
       const data = await getDoc(getCollectionRef);
 
       setPost(data.data());
+
+      
       console.log(data.data());
     };
     getPost();
@@ -63,6 +66,15 @@ const SinglePost = () => {
 
   return (
     <div className="mt-[60px] w-full">
+      
+{post.title && 
+<MetadataComponent
+        title={post?.title}
+        description={post?.postText}
+        image={post?.image}
+        page={params.post}
+        tags={post?.title}
+      />}
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
