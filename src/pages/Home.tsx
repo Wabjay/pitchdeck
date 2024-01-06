@@ -2,11 +2,10 @@ import Hero from "../sections/Hero";
 import Carousel from "../sections/Carousel";
 import Presentation from "../sections/Presentation";
 import Works from "../sections/Works";
-import Pricing from "../sections/Pricing";
-import Faq from "../sections/Faq";
 import MetadataComponent from "../component/Metadata";
+import Pricing from "../sections/Pricing";
 
-const Home = () => {
+const PitchDeck = () => {
   return (
     <>
     <MetadataComponent
@@ -18,12 +17,11 @@ const Home = () => {
         <Hero />
         <Carousel />
         <Presentation />
-        <Works />
         <Pricing />
-        <Faq />
+        <Works />
       </div>
     </>
   );
 };
 
-export default Home;
+export default PitchDeck;

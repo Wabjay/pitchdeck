@@ -1,5 +1,8 @@
 import React from 'react'
 import Phone from "./../assets/phone.png"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 export const PriceCard = ({product}) => {
 
   console.log(product)
@@ -23,10 +26,17 @@ export const SupportCard = () => {
 
     return (
         <div className={`basis-1/3 p-8 border border-[#E3E3E2] bg-[#FFFFFF] text-[#2E2E27] text-center flex flex-col justify-center items-center`}>
-           <img src={Phone} className='w-[120px] h-[120px]' alt="Telephone"/>
+           {/* <img src={Phone} className='w-[120px] h-[120px]' alt="Telephone"/> */}
+           <LazyLoadImage
+    alt="Telephone"
+    effect="blur"
+    height={120}
+    width={120}
+    src={Phone}
+    wrapperClassName= "w-[120px] h-[120px]" />
            <p className='mb-6 text-[24px] font-bold leading-8 tracking-[-0.96px]'>Have Questions for us?</p>
           <p className='text-[#64645F] text-[16px] leading-6 tablet:text-[20px] tablet:leading-7'>Learn more about how pptdesigner works and how it can help you.</p>
-            <a href='https://cal.com/olayanjuidris' target='_blank' rel='noreferrer'
+            <a href='https://cal.com/olayanjuidris/pptdesignercall' target='_blank' rel='noreferrer'
                     className="w-full my-8 bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2 text-[#ffffff]  font-sm leading-5 font-medium focus:outline-none ">
                     Schedule a call</a>
         </div>

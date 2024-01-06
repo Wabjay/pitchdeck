@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   doc,
   getDoc,
@@ -13,14 +13,13 @@ import { useMediaQuery } from "react-responsive";
 import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
 import MetadataComponent from "../component/Metadata";
+import { store } from "../store";
 
 
 const SinglePost = () => {
   let params = useParams();
-  // console.log(params.post);
-
+const {setIsLoading} = store()
   const [post, setPost] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
   const [postLists, setPostList] = useState([]);
 
   const getCollectionRef = doc(db, "posts", params.post);
@@ -29,19 +28,15 @@ const SinglePost = () => {
     collection(db, "posts"),
     orderBy("date", "desc")
   );
-  const location = useLocation();
   const navigate = useNavigate();
 
-  // const isSmallScreen = useMediaQuery({ query: "(max-width: 1023px)" });
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
 
-  // console.log(params.post);
-
-  // console.log(location);
 
   useEffect(() => {
     // Get all Post
+    setIsLoading(true);
 
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -52,21 +47,16 @@ const SinglePost = () => {
 
     getPosts();
     // Get Single Post
-
     const getPost = async () => {
       const data = await getDoc(getCollectionRef);
-
       setPost(data.data());
-
-      
-      console.log(data.data());
-    };
+      setIsLoading(false);
+          };
     getPost();
-  }, []);
+  }, [getCollectionRef, postsCollectionRef, setIsLoading]);
 
   return (
     <div className="mt-[60px] w-full">
-      
 {post.title && 
 <MetadataComponent
         title={post?.title}
@@ -78,7 +68,7 @@ const SinglePost = () => {
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
-          <button
+        <button
             className="flex w-fit items-center bg-white p-3 rounded-[8px] border border-[#D2D2CF] shadow-backButton mb-8"
             onClick={() => navigate(-1)}
             type="button"

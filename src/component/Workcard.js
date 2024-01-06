@@ -1,10 +1,16 @@
-import React from 'react'
 import Arrow from "./../assets/arrowUp.svg"
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 export const WorkCardImage = ({image, title, description, link}) => {
   return (
     <div className='w-full tablet:max-w-[600px] laptop:w-[468px]  xl:w-[560px]'>
-        <img src={image} className='w-full h-[209px] tablet:h-[381px] laptop:h-[338px] xl:h-[405px]' alt="work pictures" />
+          <LazyLoadImage
+    alt="work pictures"
+    effect="blur"
+    src={image}
+    wrapperClassName= "w-full h-[209px] tablet:h-[381px] laptop:h-[338px] xl:h-[405px]" />
+        {/* <img src={image} className='w-full h-[209px] tablet:h-[381px] laptop:h-[338px] xl:h-[405px]' alt="work pictures" /> */}
      
      <a  href={link} className='flex w-fit items-center mt-6'
     target='_blank' rel="noreferrer">
