@@ -6,7 +6,6 @@ import Arrow from "../../assets/arrowUp.svg"
 import { useParams } from 'react-router-dom';
 import { store } from '../../store';
 import { createSlug } from '../slug';
-import LazyLoad from 'react-lazyload';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -34,9 +33,7 @@ const PitchCard = ({ pitch, border }) => {
         {!isLogged ? <>
         <div className='flex justify-between mb-1' onClick={login}>
             <p className='text-16 font-medium text-[#2E2E27] P-3 text-20 tablet:font-bold'>{pitch.title}</p>
-            <LazyLoad offset={100}>
               <img src={Arrow} alt="Arrow Up" className='w-[22.14px] h-[22.14px]' />
-              </LazyLoad>
           </div>
 
           <p className='text-12 font-normal text-[#2E2E27] P-3 flex'>{pitch.contentImagesUrls?.length} pages <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
