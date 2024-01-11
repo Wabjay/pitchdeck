@@ -9,6 +9,7 @@
   src: local("Space"),
    url("./font/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
+  font-display: swap
  }
 
 

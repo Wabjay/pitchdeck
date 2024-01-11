@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Arrow from "./../assets/arrowRight.svg"
 import { useParams } from 'react-router-dom';
+import LoadImage from './LoadImage';
 
 
 
@@ -11,7 +12,7 @@ const BlogCard = ({ image, date, id, desc }) => {
 
   return (
     <div className='h-fit tablet:h-full tablet:pb-[80px] laptop:pb-0'>
-      <img src={image} className='mb-6 w-full h-full max-h-[342px]' alt="" />
+      <LoadImage src={image} style={`mb-6 w-full h-full max-h-[342px]`} alt={desc.substring(0, 20)}  />
       {!params.id && <p className='text-[#64645F] text-[16px] leading-6'>{date}</p>}
         <p className='my-2 text-[#2E2E27] text-[16px] font-[600] leading-[22px] laptop:text-[20px] laptop:font-bold laptop:leading-[28px] tracking-[-0.8px]' dangerouslySetInnerHTML={{ __html: (desc.length > 70 ?
         `${desc.substring(0, 70)} ...` : desc) }}></p>

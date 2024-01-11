@@ -1,9 +1,8 @@
 {
-  "name": "ppt",
+  "name": "pitchdeck",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@paypal/react-paypal-js": "^8.1.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,33 +12,33 @@
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "antd": "^5.11.2",
-    "draft-js": "^0.11.7",
-    "draftjs-to-html": "^0.9.1",
+    "axios": "^1.6.2",
     "firebase": "^10.6.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
+    "react-cookie": "^6.1.1",
     "react-dom": "^18.2.0",
-    "react-draft-wysiwyg": "^1.15.0",
     "react-firebase-hooks": "^5.1.1",
     "react-ga": "^3.3.1",
     "react-helmet": "^6.1.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-marquee-slider": "^1.1.5",
-    "react-quill": "^2.0.0",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.19.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
+    "sitemap": "^7.1.1",
     "styled-components": "^6.1.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.4.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "mv build/snap-preload-manifest.json build/snap-manifest.json && npm run create-sitemap",
-    "create-sitemap": "node scripts/create-sitemap.js"
+    "generate-sitemap": "node generateSitemap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +62,10 @@
     "@types/draft-js": "^0.11.15",
     "@types/draftjs-to-html": "^0.8.4",
     "@types/html-to-draftjs": "^1.4.3",
+    "@types/lodash": "^4.14.202",
     "@types/react-draft-wysiwyg": "^1.13.7",
+    "@types/react-lazy-load-image-component": "^1.6.3",
+    "@types/react-lazyload": "^3.2.3",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "react-snap": "^1.23.0",

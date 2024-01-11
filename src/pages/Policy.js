@@ -6,7 +6,7 @@ const Policy = () => {
     const policies = [
         {
             heading: "Privacy Policy",
-            desc: 'This privacy policy (the "Policy") relates to the http://pptdesigner.co/ website operated by pptdesigner (“we,” “us,” or “our”) for the Pptdesigner product. This Policy outlines how we collect, use, disclose, and protect the personal information of our users and visitors.'
+            desc: 'This privacy policy (the "Policy") relates to the http://pitchdeck.design/ website operated by pptdesigner (“we,” “us,” or “our”) for the Pptdesigner product. This Policy outlines how we collect, use, disclose, and protect the personal information of our users and visitors.'
         },
         {
             heading: "Information Collection and Use",
@@ -48,7 +48,6 @@ const Policy = () => {
         },
     ]
 
-    console.log("first")
     return (
         <div className='w-full mt-[60px]'>
             <div className='flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px] w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>

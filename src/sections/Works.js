@@ -1,14 +1,15 @@
 import React from 'react'
 import { WorkCard, WorkCardImage } from '../component/Workcard'
-import Maxim from "./../assets/maxim.png"
-import Barista from "./../assets/barista.png"
-import Frontier from "./../assets/frontier.png"
-import Smile from "./../assets/smile.png"
+import Maxim from "./../assets/maxim.webp"
+import Barista from "./../assets/barista.webp"
+import Frontier from "./../assets/frontier.webp"
+import Smile from "./../assets/smile.webp"
 // PDF'S
 import MaximPdf from "./../assets/pdf/maxim.pdf"
 import BaristaPdf from "./../assets/pdf/barrista.pdf"
 import FrontierPdf from "./../assets/pdf/frontier yileds.pdf"
 import SmilePdf from "./../assets/pdf/smile.pdf"
+
 const Works = () => {
   return (
     <div className='bg-[#EEFCF5]' id='works'>

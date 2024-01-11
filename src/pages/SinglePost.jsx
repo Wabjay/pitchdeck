@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   doc,
   getDoc,
@@ -13,14 +13,12 @@ import { useMediaQuery } from "react-responsive";
 import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
 import MetadataComponent from "../component/Metadata";
-
+import { store } from "../store";
 
 const SinglePost = () => {
   let params = useParams();
-  // console.log(params.post);
-
+  const { setIsLoading } = store();
   const [post, setPost] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
   const [postLists, setPostList] = useState([]);
 
   const getCollectionRef = doc(db, "posts", params.post);
@@ -29,19 +27,13 @@ const SinglePost = () => {
     collection(db, "posts"),
     orderBy("date", "desc")
   );
-  const location = useLocation();
   const navigate = useNavigate();
 
-  // const isSmallScreen = useMediaQuery({ query: "(max-width: 1023px)" });
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-
-
-  // console.log(params.post);
-
-  // console.log(location);
 
   useEffect(() => {
     // Get all Post
+    setIsLoading(true);
 
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -52,29 +44,25 @@ const SinglePost = () => {
 
     getPosts();
     // Get Single Post
-
     const getPost = async () => {
       const data = await getDoc(getCollectionRef);
-
       setPost(data.data());
-
-      
-      console.log(data.data());
+      setIsLoading(false);
     };
     getPost();
-  }, []);
+  }, [getCollectionRef, postsCollectionRef, setIsLoading]);
 
   return (
     <div className="mt-[60px] w-full">
-      
-{post.title && 
-<MetadataComponent
-        title={post?.title}
-        description={post?.postText}
-        image={post?.image}
-        page={params.post}
-        tags={post?.title}
-      />}
+      {post.title && (
+        <MetadataComponent
+          title={post?.title}
+          description={post?.postText}
+          image={post?.image}
+          page={params.post}
+          tags={post?.title}
+        />
+      )}
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
@@ -83,7 +71,7 @@ const SinglePost = () => {
             onClick={() => navigate(-1)}
             type="button"
           >
-            <img src={Arrow} alt="" className="rotate-180"/>
+            <img src={Arrow} alt="" className="rotate-180" />
             <p>Back</p>
           </button>
           <p className="capitalize text-[24px] font-bold leading-[32px] tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px] text-[#2E2E27] w-fit">
@@ -97,9 +85,9 @@ const SinglePost = () => {
           <div className="">
             <div className="my-6">
               {console.log(post?.postText)}
-             <p
+              <p
                 className="singlePost"
-                dangerouslySetInnerHTML={{ __html: post?.postText}}
+                dangerouslySetInnerHTML={{ __html: post?.postText }}
               ></p>
             </div>
           </div>

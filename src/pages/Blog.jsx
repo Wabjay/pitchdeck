@@ -4,10 +4,11 @@ import { db } from "../firebase-config";
 import BlogCard from "../component/BlogCard";
 import MetadataComponent from "../component/Metadata";
 import Analytics from "../component/Analytics";
+import { store } from "../store";
 
 const Blog = () => {
 
-  const [isLoading, setIsLoading] = useState(true);
+  const {setIsLoading} = store()
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = query(
     collection(db, "posts"),
@@ -15,6 +16,8 @@ const Blog = () => {
   );
 
   useEffect(() => {
+    // setIsLoading(true);
+
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -22,7 +25,7 @@ const Blog = () => {
     };
 
     getPosts();
-  }, []);
+  }, [postsCollectionRef, setIsLoading]);
 
   
 
@@ -32,7 +35,8 @@ const Blog = () => {
 <Analytics/>
 <MetadataComponent
         title="Blog Post"
-        description="This is a dynamic description."
+        description="PPTDesigner blog post, know more about the quality design services we provide."
+        tags={'powerpoint, design, design ideas, how to design, presentation'}
       />
 
       {/* // Top Section */}

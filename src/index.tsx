@@ -4,9 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import "./font/SpaceGrotesk-VariableFont_wght.ttf";
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-BZ651KDWBJ')
+// ReactGA.initialize('G-BZ651KDWBJ')
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
