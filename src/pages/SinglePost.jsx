@@ -15,10 +15,9 @@ import Arrow from "../assets/arrowRight.svg";
 import MetadataComponent from "../component/Metadata";
 import { store } from "../store";
 
-
 const SinglePost = () => {
   let params = useParams();
-const {setIsLoading} = store()
+  const { setIsLoading } = store();
   const [post, setPost] = useState({});
   const [postLists, setPostList] = useState([]);
 
@@ -31,8 +30,6 @@ const {setIsLoading} = store()
   const navigate = useNavigate();
 
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
-
-
 
   useEffect(() => {
     // Get all Post
@@ -51,29 +48,30 @@ const {setIsLoading} = store()
       const data = await getDoc(getCollectionRef);
       setPost(data.data());
       setIsLoading(false);
-          };
+    };
     getPost();
   }, [getCollectionRef, postsCollectionRef, setIsLoading]);
 
   return (
     <div className="mt-[60px] w-full">
-{post.title && 
-<MetadataComponent
-        title={post?.title}
-        description={post?.postText}
-        image={post?.image}
-        page={params.post}
-        tags={post?.title}
-      />}
+      {post.title && (
+        <MetadataComponent
+          title={post?.title}
+          description={post?.postText}
+          image={post?.image}
+          page={params.post}
+          tags={post?.title}
+        />
+      )}
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
-        <button
+          <button
             className="flex w-fit items-center bg-white p-3 rounded-[8px] border border-[#D2D2CF] shadow-backButton mb-8"
             onClick={() => navigate(-1)}
             type="button"
           >
-            <img src={Arrow} alt="" className="rotate-180"/>
+            <img src={Arrow} alt="" className="rotate-180" />
             <p>Back</p>
           </button>
           <p className="capitalize text-[24px] font-bold leading-[32px] tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px] text-[#2E2E27] w-fit">
@@ -87,9 +85,9 @@ const {setIsLoading} = store()
           <div className="">
             <div className="my-6">
               {console.log(post?.postText)}
-             <p
+              <p
                 className="singlePost"
-                dangerouslySetInnerHTML={{ __html: post?.postText}}
+                dangerouslySetInnerHTML={{ __html: post?.postText }}
               ></p>
             </div>
           </div>

@@ -7,8 +7,3 @@ export function createSlug(str: string) {
       .trim(); // Trim any leading or trailing spaces or dashes
   }
   
-  // Example usage:
-  const title = "This is an Example Title!";
-  const slug = createSlug(title);
-  console.log(slug); // Output: "this-is-an-example-title"
-  

@@ -2,45 +2,38 @@ import SearchPitch from '../component/pitchdeck/SearchPitch'
 import PitchCard from '../component/pitchdeck/PitchCard'
 import { Tags } from '../lib/data'
 import { store } from '../store'
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import axios from '../lib/axios'
 
 const PitchContent = () => {
 
   // Sort by tag
-  const sort = (tag)=>{
+  const sort = (tag) => {
     console.log(tag.target.textContent)
-    // set items = content filtered by tag
   }
 
-  const {setTags, tags, pitches, setIsLoading, fetchPitches} = store()
+  const { setTags, tags, pitches, setIsLoading, fetchPitches } = store()
 
-  useEffect(()=>{
+  useEffect(() => {
     setTags(Tags)
-  },[setTags]) 
+  }, [setTags])
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(()=> {
+  useMemo(() => {
     // eslint-disable-next-line no-unused-expressions
-      setIsLoading(true);
+    setIsLoading(true);
     try {
-       axios.get('/pitch/getAll')
-      .then(function (response) {
-      fetchPitches(response.data.pitchDecks)
-      setIsLoading(false);
-       
-      })
-      
+      axios.get('/pitch/getAll')
+        .then(function (response) {
+          fetchPitches(response.data.pitchDecks)
+          setIsLoading(false);
+        })
+
     } catch (error) {
       console.error('Error fetching data:', error);
       setIsLoading(false);
     }
-},[fetchPitches, setIsLoading]) 
-
-
-//   useEffect(()=> {
-//       fetchPitches()
-// },[fetchPitches, setIsLoading]) 
+  }, [fetchPitches, setIsLoading])
 
 
   return (
@@ -55,16 +48,12 @@ const PitchContent = () => {
         </div>
 
         <div className='grid tablet:grid-cols-2 laptop:grid-cols-3 gap-6 tablet:gap-[30px] laptop:flex-row laptop:gap-[30px]'>
-        
-        
-        {/* The real pitch file */}
-          {pitches.map(item => (
 
-          // {/* {items.map(item => ( */}
-              <PitchCard
-               key={item._id}
-                 pitch={item} 
-                 />
+          {pitches.map(item => (
+            <PitchCard
+              key={item._id}
+              pitch={item}
+            />
           ))}
 
 

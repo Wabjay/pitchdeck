@@ -4,6 +4,7 @@ import Presentation from "../sections/Presentation";
 import Works from "../sections/Works";
 import MetadataComponent from "../component/Metadata";
 import Pricing from "../sections/Pricing";
+import Faq from "../sections/Faq";
 
 const PitchDeck = () => {
   return (
@@ -17,8 +18,9 @@ const PitchDeck = () => {
         <Hero />
         <Carousel />
         <Presentation />
-        <Pricing />
         <Works />
+        <Pricing />
+        <Faq />
       </div>
     </>
   );

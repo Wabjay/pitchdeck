@@ -4,7 +4,7 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const generateSitemap = async () => {
-  const pages = ['/', '/blog', '/blogspot/:post']; // Add the root URL
+  const pages = ['/', '/blog', '/blogspot/:post', '/pitch-decks', '/pitch/:pitch']; // Add the root URL
 
   // Add other URLs in your React application
   // For example, if you have a /about and /contact page:
@@ -14,7 +14,7 @@ const generateSitemap = async () => {
   // ... add more pages as needed
 
   const sitemap = createSitemap({
-    hostname: 'https://pptdesigner.co', // Replace with your domain
+    hostname: 'https://Pitchdeck.design', // Replace with your domain
     urls: pages.map(page => ({ url: page, changefreq: 'daily', priority: 0.7 })),
   });
 

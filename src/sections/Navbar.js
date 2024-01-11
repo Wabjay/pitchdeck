@@ -8,6 +8,7 @@ import Ham from "./../assets/hambugger.svg"
 import { store } from "../store"
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import LoadImage from '../component/LoadImage';
 
 const Navbar = () => {
     const [visibility, setVisibility,] = useState(false)
@@ -37,13 +38,13 @@ const Navbar = () => {
                 <div
                     className="flex flex-wrap place-self-center items-center justify-between  w-full laptop:max-w-[1152px] mx-auto">
                     <Link to='/' className="flex items-center" onClick={() => setVisibility(false)}>
-                        <img src={Logo} className="w-[149px] h-[37px] mr-3"
-                            alt="PPTDesign Logo" />
+                        <LoadImage src={Logo} alt="PPTDesign Logo" style={`w-full max-w-[149px] h-[37px] mr-3`} />
                     </Link>
                     <div className="flex items-center laptop:order-1">
                         {
                             isSmallScreen ? <>
-                                <img src={Ham} className="w-6" alt="Hambugger Icon" onClick={toggleNavbar} />
+                        <img src={Ham} alt="Hambugger Icon"  className={`w-6 h-6`}  onClick={toggleNavbar}/>
+
                                 {visibility &&
                                     <div className='fixed top-[60px] left-0 h-full bg-white w-full py-4 px-6 tablet:px-8'>
                                         <ul className="flex flex-col font-medium gap-8">

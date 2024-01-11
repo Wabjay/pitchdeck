@@ -1,5 +1,5 @@
 {
-  "name": "ppt",
+  "name": "pitchdeck",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,8 +13,6 @@
     "@types/react-dom": "^18.2.15",
     "antd": "^5.11.2",
     "axios": "^1.6.2",
-    "draft-js": "^0.11.7",
-    "draftjs-to-html": "^0.9.1",
     "firebase": "^10.6.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
