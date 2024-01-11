@@ -78,19 +78,19 @@ export const store = create<Store>((set, get) => ({
 
   resetState: () => set(initialState),
 
-  setToken: (token) => {  set((_state) => ({ token: token})) },
-  setShowLogin: (show) => {  set((state) => ({ showLogin : show})) },
-  setShowData: (show) => {  set((state) => ({ showData : show})) },
-  setIsLoggedin: (status) => {  set((state) => ({isLogged  : status  }))},
-  setIsLoading: (status) => {  set((state) => ({loading  : status  }))},
-  setlink: (link) => {  set((state) => ({ link : link})) },
+  setToken: (token: any) => {  set((_state: any) => ({ token: token})) },
+  setShowLogin: (show: any) => {  set((state: any) => ({ showLogin : show})) },
+  setShowData: (show: any) => {  set((state: any) => ({ showData : show})) },
+  setIsLoggedin: (status: any) => {  set((state: any) => ({isLogged  : status  }))},
+  setIsLoading: (status: any) => {  set((state: any) => ({loading  : status  }))},
+  setlink: (link: any) => {  set((state: any) => ({ link : link})) },
 
   
-  setUser: (user)=> { set((state) => ({  user: user  })) },
+  setUser: (user: any)=> { set((state: any) => ({  user: user  })) },
 
   // Temporary Use
-  setTags: (tags)=> { set((state) => ({  tags: tags  })) },
-  setImages: (images)=> { set((state) => ({  images: images  })) },
+  setTags: (tags: any)=> { set((state: any) => ({  tags: tags  })) },
+  setImages: (images: any)=> { set((state: any) => ({  images: images  })) },
   
   
   // fetchPitches: () => {
@@ -107,7 +107,7 @@ export const store = create<Store>((set, get) => ({
   //   }
   // },
 
-  fetchPitches: (response) => {  set((state) => ({ pitches: response, loading: false }))},
+  fetchPitches: (response: any) => {  set((state: any) => ({ pitches: response, loading: false }))},
 
   fetchSinglePitch: async (id: string) => {
     set({ loading: true });
@@ -130,6 +130,6 @@ export const store = create<Store>((set, get) => ({
   },
 }));
 
-function then(arg0: (res: any) => void) {
-  throw new Error("Function not implemented.");
-}
+// function then(arg0: (res: any) => void) {
+//   throw new Error("Function not implemented.");
+// }

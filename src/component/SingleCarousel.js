@@ -9,8 +9,10 @@ import LoadImage from "./LoadImage";
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
+  height: auto;
 `;
+// height: ${(props) => (props.height ? (props.height + "px") : "auto")};
+
 
 const Box = styled.div`
   padding: ${(props) => props.scale * 25}px;

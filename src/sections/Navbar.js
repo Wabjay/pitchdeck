@@ -65,7 +65,7 @@ const Navbar = () => {
                             </>
                                 :
                                 <ul className="flex font-medium flex-row items-center gap-[56px]">
-                                    <li className=""> <Link smooth to='/pitch-decks' className="text-[#0A0A0A] text-sm leading-5 font-medium">Company Pitchdecks</Link> </li>
+                                    <li className=""> <Link to='/pitch-decks' className="text-[#0A0A0A] text-sm leading-5 font-medium">Company Pitchdecks</Link> </li>
                                     <li className=""> <HashLink smooth to='/#works' className="text-[#0A0A0A] text-sm leading-5 font-medium">Our Works</HashLink> </li>
                                     <li className="">  <Link to='/blog' className="text-[#0A0A0A] text-sm leading-5 font-medium">Blog</Link> </li>
                                     <li className=""> <HashLink smooth to='/#pricing' className="text-[#0A0A0A] text-sm leading-5 font-medium">Pricing</HashLink> </li>
