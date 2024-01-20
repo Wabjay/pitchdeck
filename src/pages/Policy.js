@@ -1,7 +1,12 @@
+import MetadataComponent from "../component/Metadata"
 
 
 const Policy = () => {
 
+    <MetadataComponent
+    title="Privacy policies"
+    description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
+    page='policy' image={undefined}      />
 
     const policies = [
         {
@@ -53,7 +58,7 @@ const Policy = () => {
             <div className='flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px] w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
                 {policies.map((policy, index) => (
                     <div key={index} className='flex flex-col gap-4'>
-                        <p className='text-[#2E2E27] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-10'>{policy.heading}</p>
+                        <h1 className='text-[#2E2E27] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-10'>{policy.heading}</h1>
                         {policy.list ?
                             <div className='flex flex-col gap-4'>
                                 {policy.list.map((list, index) => (
@@ -61,7 +66,7 @@ const Policy = () => {
                                 ))}
 
                             </div>
-                            : <p className='text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{policy.desc}</p>}
+                            : <h7 className='text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{policy.desc}</h7>}
                     </div>
                 ))}
 

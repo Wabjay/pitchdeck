@@ -60,7 +60,6 @@ const SinglePost = () => {
           description={post?.postText}
           image={post?.image}
           page={params.post}
-          tags={post?.title}
         />
       )}
       {/* // Top Section */}
@@ -84,7 +83,7 @@ const SinglePost = () => {
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <div className="">
             <div className="my-6">
-              {console.log(post?.postText)}
+              {/* {console.log(post?.postText)} */}
               <p
                 className="singlePost"
                 dangerouslySetInnerHTML={{ __html: post?.postText }}
@@ -108,7 +107,6 @@ const SinglePost = () => {
                   (isBigScreen ? i < 3 : i < 2) &&
                   post.id !== params.post && (
                     <>
-                      {console.log(post)}
                       <BlogCard
                         key={post.id}
                         id={post.id}

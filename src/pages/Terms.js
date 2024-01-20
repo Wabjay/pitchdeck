@@ -1,7 +1,11 @@
+import MetadataComponent from "../component/Metadata"
 
 const Terms = () => {
 
-
+    <MetadataComponent
+    title="Terms and Conditions"
+    description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
+    page='Terms-and-Conditions' image={undefined} />
     const terms = [
         {
             heading: "Terms and Conditions",
@@ -115,7 +119,7 @@ const Terms = () => {
             <div className='flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px] w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
                 {terms.map((term, index) => (
                     <div key={index} className='flex flex-col gap-4'>
-                        <p className='text-[#2E2E27] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-10'>{term.heading}</p>
+                        <h1 className='text-[#2E2E27] text-[24px] font-bold leading-8 tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-10'>{term.heading}</h1>
                         {term.list ?
                             <div className='flex flex-col gap-4'>
                                 {term.list.map((list, index) => (
@@ -125,9 +129,9 @@ const Terms = () => {
                             </div>
                             : term.desc > 0 ? <div className='flex flex-col'>
                                 {term.desc.map((desc, i) => (
-                                    <p key={i} className='block text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{desc}</p>
+                                    <h7 key={i} className='block text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{desc}</h7>
                                 ))}
-                            </div> : <p className='text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{term.desc}</p>}
+                            </div> : <h7 className='text-sm leading-5 tablet:text-[16px] tablet:leading-6 laptop:text-[20px] laptop:leading-7'>{term.desc}</h7>}
                     </div>
                 ))}
 

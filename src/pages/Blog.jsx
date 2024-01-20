@@ -3,11 +3,9 @@ import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase-config";
 import BlogCard from "../component/BlogCard";
 import MetadataComponent from "../component/Metadata";
-import Analytics from "../component/Analytics";
 import { store } from "../store";
 
 const Blog = () => {
-
   const {setIsLoading} = store()
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = query(
@@ -16,8 +14,6 @@ const Blog = () => {
   );
 
   useEffect(() => {
-    // setIsLoading(true);
-
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -32,19 +28,18 @@ const Blog = () => {
 
   return (
     <div className="mt-[60px] w-full">
-<Analytics/>
 <MetadataComponent
-        title="Blog Post"
-        description="PPTDesigner blog post, know more about the quality design services we provide."
-        tags={'powerpoint, design, design ideas, how to design, presentation'}
+        title="Pitchdeck Design || Blog Post"
+        description="Pitchdeck Design blog post, know more about the quality design services we provide."
+        page="blog"
       />
 
       {/* // Top Section */}
       <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
-          <p className="text-[64px] font-bold leading-[72px] tracking-[-2px] text-[#2E2E27] mx-auto w-fit">
+          <h1 className="text-[64px] font-bold leading-[72px] tracking-[-2px] text-[#2E2E27] mx-auto w-fit">
             Blog
-          </p>
+          </h1>
         </div>
       </div>
 

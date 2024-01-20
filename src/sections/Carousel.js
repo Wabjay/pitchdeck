@@ -18,6 +18,7 @@ import Image16 from "./../assets/image16.webp"
 import Image17 from "./../assets/image17.webp"
 import Image18 from "./../assets/image18.webp"
 import SingleCarousel from "../component/SingleCarousel";
+import {ImageCarousel} from "../component/ReactCarousel";
 
 
 const topImages = [Image1,Image2,Image3,Image4,Image5,Image6,Image7,Image15,Image16]
@@ -31,8 +32,11 @@ const Carousel = () => {
     <div className={`w-full laptop:max-w-[1440px] mx-auto overflow-hidden`} >
   
 <div className="flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px]">
-<SingleCarousel images={topImages} direction="rtl" />
-<SingleCarousel images={bottomImages} direction="ltr" />
+{/* <SingleCarousel images={topImages} direction="rtl" />
+<SingleCarousel images={bottomImages} direction="ltr" /> */}
+
+<ImageCarousel  images={topImages} rtl={false}/>
+<ImageCarousel  images={bottomImages} rtl={true}/>
 </div>
 </div>
 </div>

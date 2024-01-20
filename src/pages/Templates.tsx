@@ -1,6 +1,6 @@
-import Hero from "../sections/PitchHero";
+import Hero from "../sections/TemplateHero";
 import MetadataComponent from "../component/Metadata";
-import PitchContent from "../sections/PitchContent";
+import TemplateContent from "../sections/TemplateContent";
 
 const Home = () => {
 
@@ -9,14 +9,13 @@ const Home = () => {
   return (
     <>
     <MetadataComponent
-        title="Pitch Decks"
+        title="PitchDeck Design Templates"
         description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
-        page='pitch-decks' image={undefined}
-         />
+        page='template' image={undefined}    />
 
       <div className="mt-[60px]">
         <Hero />
-       <PitchContent />
+       <TemplateContent/>
       </div>
     </>
   );
