@@ -1,6 +1,6 @@
 import Hero from "../sections/TemplateHero";
-import MetadataComponent from "../component/Metadata";
 import TemplateContent from "../sections/TemplateContent";
+import Helmet from "../component/MetadataNew";
 
 const Home = () => {
 
@@ -8,10 +8,12 @@ const Home = () => {
 
   return (
     <>
-    <MetadataComponent
-        title="PitchDeck Design Templates"
-        description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
-        page='template' image={undefined}    />
+        <Helmet
+                title="Templates"
+                description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups"
+                link='/template'
+                addPostfixTitle={true}
+            />
 
       <div className="mt-[60px]">
         <Hero />

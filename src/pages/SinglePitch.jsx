@@ -1,54 +1,86 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import { useCookies } from "react-cookie";
 import Arrow from "../assets/back.svg";
-import MetadataComponent from "../component/Metadata";
+import Helmet from "../component/MetadataNew";
 import SideSection from "../component/pitchdeck/SideSection";
 import { store } from "../store";
 import FooterPitches from "../sections/FooterPitches";
-
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import LoadImage from "../component/LoadImage";
+import Schema from "../component/Schema";
 
 const SinglePitch = () => {
   let params = useParams();
-  const { fetchSinglePitch, getId, pitch, isLogged, setShowLogin, setlink } = store();
+  const [cookies, setCookie] = useCookies(["pitch", "isLogged"]);
+  // eslint-disable-next-line no-mixed-operators, no-use-before-define
+  const [pitchDetail, setPitchDetail] = useState({})
+
+  const { fetchSinglePitch, getId, pitch, user,  setShowLogin, componentLoading } = store();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const currentPathname = window.location.pathname;
     const path = currentPathname.split("/").pop();
+    const pitchTitle = params.pitch !== "" ? params.pitch : path;
+    
+    getId(pitchTitle)
+    // getId(pitch);
+    fetchSinglePitch(pitchTitle);
+    
+    if(!cookies.isLogged){ 
+      setShowLogin(true)
+    } 
 
-    const pitch = params.pitch !== "" ? params.pitch : path;
-     
-    getId(pitch);
-    fetchSinglePitch();
-  }, [fetchSinglePitch,getId,isLogged,setShowLogin,setlink,pitch,params.pitch]);
+  }, [ fetchSinglePitch, params.pitch, getId, cookies.isLogged, setShowLogin]);
+
 
   const handleContextMenu = (e) =>{
-    e.preventDefault()
+    if(user.email !== "pixelgumstudio@gmail.com"){
+       e.preventDefault()
+    }
   }
+
+  // const pitchSchema = {
+  //   name: pitch.title,
+  //   description: pitch.description,
+  //   url: `https://pitchdeck.design/pitch/${pitch.title}`,
+  //   imageUrl: pitch.coverImageUrl,
+  // }
+
+
   return (
     <div className="mt-[60px] w-full">
       {pitch && (
-        <MetadataComponent
-          title={pitch.title}
-          description={pitch.about}
-          image={pitch.coverImageUrl}
-          page={params.title}
-        />
+        <>
+          <Helmet
+            title={pitch.title}
+            description={pitch.about}
+            imageCard={pitch.coverImageUrl}
+            link={`/pitch/${params.pitch}`}
+            addPostfixTitle={true}
+          />
+          <Schema
+            name={pitch.title}
+            description={pitch.description}
+            url={`/pitch/${pitch.title}`}
+            imageUrl={pitch.coverImageUrl}
+          />
+        </>
       )}
       {/* // Top Section */}
 
       <div onContextMenu={handleContextMenu} className="bg-[#F2F1E8]">
         <div className="w-full laptop:max-w-[1440px] mx-auto px-4 tablet:px-6 laptop:px-0 desktop:px-0 bg-white laptop:bg-[#F2F1E8]">
-          <div className="w-full max-w-[1272px] mx-auto desktop:ml-[144px] bg-white laptop:px-8 laptop:bg-transparent desktop:px-0">
+          <div className=" sticky top-10 laptop:py-5 w-full max-w-[1272px] mx-auto desktop:ml-[144px] bg-white laptop:px-8 laptop:bg-[#F2F1E8] desktop:px-0">
             <button
               className="p-[6px] mt-6 bg-white"
               onClick={() => navigate(-1)}
               type="button"
             >
-              <img src={Arrow} alt="" className="" />
+              <img src={Arrow} alt="back button" className="" />
             </button>
           </div>
 
@@ -60,14 +92,16 @@ const SinglePitch = () => {
                   <LoadImage
                     alt={`${pitch.title}`}
                     src={pitch.coverImageUrl}
+                    height={205}
                     style={`w-full h-[205px] tablet:h-[456px] laptop:w-[640px] laptop:h-[537px] desktop:w-[757px]`}
                   />
 
-                  {pitch.contentImagesUrls.map((image, index) => (
+                  {pitch.contentImagesUrls?.map((image, index) => (
                     <LoadImage
                       key={index}
                       alt={`${pitch.title} ${index}`}
                       src={image}
+                      height={205}
                       style={`w-full h-[205px] tablet:h-[456px] laptop:w-[640px] laptop:h-[537px] desktop:w-[757px]`}
                     />
                   ))}
@@ -79,7 +113,7 @@ const SinglePitch = () => {
       </div>
 
       {/* Recent Posts */}
-      <FooterPitches />
+      <FooterPitches pitchTag={pitch} />
     </div>
   );
 };

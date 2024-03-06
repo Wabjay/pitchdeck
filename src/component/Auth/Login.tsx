@@ -1,8 +1,5 @@
-import { useState } from "react"
 import Cancel from "../../assets/cancel.svg"
-import axios from "../../lib/axios"
 import { store } from "../../store"
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import GoogleLogins from "./Google";
 
@@ -31,7 +28,7 @@ const {setShowLogin, setLoginWithCard} = store()
 
         <p
         onClick={loginWithEmail}
-          className="text-[#0A0A0A] bg-white border border-[#D2D2CF] hover:bg-[#F9F9F9] shadow-navbarLink inline-flex items-center justify-center py-3 px-6 text-sm leading-5 font-semibold focus:outline-none ">
+          className="text-[#0A0A0A] cursor-pointer bg-white border border-[#D2D2CF] hover:bg-[#F9F9F9] shadow-navbarLink inline-flex items-center justify-center py-3 px-6 text-sm leading-5 font-semibold focus:outline-none ">
           Continue with Email</p>
           
       </div>

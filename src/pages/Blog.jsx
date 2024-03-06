@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getDocs, collection, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase-config";
 import BlogCard from "../component/BlogCard";
-import MetadataComponent from "../component/Metadata";
+import Helmet from "../component/MetadataNew";
 import { store } from "../store";
 
 const Blog = () => {
@@ -28,10 +28,11 @@ const Blog = () => {
 
   return (
     <div className="mt-[60px] w-full">
-<MetadataComponent
-        title="Pitchdeck Design || Blog Post"
+<Helmet
+        title="Blog Post"
         description="Pitchdeck Design blog post, know more about the quality design services we provide."
-        page="blog"
+        link="/blog"
+        addPostfixTitle={true}
       />
 
       {/* // Top Section */}
@@ -45,12 +46,12 @@ const Blog = () => {
 
       <div className="bg-[#FFF]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 my-[40px] tablet:my-[80px] laptop:my-[100px]">
-          <div className="grid gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
+          <div className="grid h-fit  gap-[54px] tablet:grid-cols-2 tablet:gap-x-8 tablet:gap-y-10 laptop:grid-cols-3 laptop:gap-y-[50px]">
             {postLists &&
               postLists.map((post) => ( 
                 <>
                   <BlogCard
-                    key={post.title}
+                    key={post.id}
                     id={post.id}
                     date={post.date}
                     image={post?.image}

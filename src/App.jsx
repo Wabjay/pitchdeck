@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {QueryClient, QueryClientProvider} from 'react-query'
 import Home from "./pages/Home";
@@ -20,8 +21,12 @@ import { store } from "./store";
 // import Loading from "./component/Loading";
 import SingleTemplate from "./pages/SingleTemplate";
 import LoginCard from "./component/Auth/LoginCard";
-import DataCard from "./component/Auth/DataCard";
+import DataCard from "./component/Auth/DataCard"
 import Login from "./component/Auth/Login";
+import axios from "./lib/axios";
+import Helmet from "./component/MetadataNew";
+import OTPCard from "./component/Auth/OTPCard";
+import './tailwind.css'
 
 function App() {
 
@@ -29,22 +34,40 @@ function App() {
 
   // const pathname = window.location.pathname;
   const [cookies] = useCookies(["user", "token", "isLogged"]);
-  const { setIsLoggedin, setUser, setToken, showLogin, showData, loginWithCard } = store();
+  const {  setUser, setToken, showLogin, showData, loginWithCard, setTags, showOTP } = store();
   const [email, setEmail] = useState('')
+  // const [userInfo, setUserInfo] = useState({})
 
-  const getEmail =(res)=>{
+  const getEmail = (res) =>{
     setEmail(res)
     }
+  
+// const getUserInfoForOTP =(res)=>{
+//       setUserInfo(res)
+//       }
 
   useEffect(() => {
     setUser(cookies.user);
     setToken(cookies.token);
-    setIsLoggedin(cookies.isLogged);
-  }, [setToken, setUser, setIsLoggedin, cookies]);
+    // setIsLoggedin(cookies.isLogged);
+  }, [setToken, setUser, cookies]);
+  
+  // Get Tags 
+  useEffect(() => {
+    axios.get('/pitch/tags')
+      .then(function (response) {
+        setTags(response.data);
+      })
+  }, [setTags]);
+
+
 
   return (
     <QueryClientProvider client={queryClient}>
     <CookiesProvider>
+  
+      <Helmet link="/" 
+       />
       <div className={`App h-[100vh] ${showLogin || showData || loginWithCard ? 'overflow-hidden' : 'overflow-overflow'}`} >
         <Router>
           <ScrollToTop />
@@ -68,9 +91,11 @@ function App() {
           {showLogin && <Login/>}
           {loginWithCard && <LoginCard getEmail={getEmail}/>}
        {showData && <DataCard email={email}/>}
+       {showOTP && <OTPCard email={email}/>}
         </Router>
       </div>
     </CookiesProvider>
+   
     </QueryClientProvider>
   );
 }

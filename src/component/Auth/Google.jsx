@@ -1,7 +1,6 @@
 import {  useEffect } from "react";
 import Google from "../../assets/google_logo.svg";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
 import { store } from "../../store";
 import { useCookies } from "react-cookie";
 import axios from "../../lib/axios";
@@ -10,9 +9,8 @@ const GoogleLogins = () => {
 
   const {setIsLoading, setIsLoggedin,  setShowData,link,  setShowLogin  } = store()
 
-  const [cookies, setCookie, removeCookie] = useCookies(["user", "token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["user", "token", "isLogged"]);
 
-  const navigate = useNavigate()
 
   const signIn = async (response) => {
     setIsLoading(true)
@@ -20,13 +18,14 @@ const GoogleLogins = () => {
     let user = jwtDecode(response.credential);
     // console.log(user)
     const payload = {
+      "googleId": user.sub,
       "email": user.email,
       "firstName": user.given_name,
       "lastName": user.family_name,
       "userName": "@" + user.given_name    }
     try {
       const res = await axios.post(
-        "auth/login", {email: user.email},
+        "auth/login", {googleId: user.sub, email: user.email},
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -35,7 +34,8 @@ const GoogleLogins = () => {
       setCookie("isLogged", true);
       setCookie("user", res?.data.user);
       setIsLoggedin(true)
-      navigate(link)
+      setShowLogin(false)
+console.log(res?.data.user)
     } catch (err) {
        if (err.response?.status === 401) {
         // setErrMsg("Unauthorized");
@@ -52,24 +52,22 @@ const GoogleLogins = () => {
             }
           );
           setIsLoading(false)
-          // console.log(res)
           setShowData(false)
           setShowLogin(false)
           setCookie("token", res?.data.token);
           setCookie("user", res?.data.user);
           setCookie("isLogged", true);
           setIsLoggedin(true)
-          navigate(link) 
         } catch (err) {
       
-            // setErrMsg("Login Failed");
             setIsLoading(false)
     
         }
-      } else {
-        console.log("Login Failed");
-        // setErrMsg("Login Failed");
       }
+  //  else {
+  //       console.log("Login Failed");
+  //       // setErrMsg("Login Failed");
+  //     }
     // setLoading(false)
     // setTimeout(() => {setErrMsg("")}, 2000);
     }
@@ -83,8 +81,8 @@ const GoogleLogins = () => {
   useEffect(()=> {
   /* global google */
  const login = async()=> {
-  await 
-  google.accounts.id.initialize({ 
+  await
+   google.accounts.id.initialize({ 
     client_id: process.env.REACT_APP_GOOGLE_ID,
     callback: signIn
   });

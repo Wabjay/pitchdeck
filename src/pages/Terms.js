@@ -1,11 +1,7 @@
-import MetadataComponent from "../component/Metadata"
+import Helmet from "../component/MetadataNew"
 
 const Terms = () => {
 
-    <MetadataComponent
-    title="Terms and Conditions"
-    description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
-    page='Terms-and-Conditions' image={undefined} />
     const terms = [
         {
             heading: "Terms and Conditions",
@@ -79,7 +75,7 @@ const Terms = () => {
             desc: "Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website."
         },
         {
-            heading: "Content Liability</strong",
+            heading: "Content Liability",
             desc: "We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights."
         },
         {
@@ -116,6 +112,12 @@ const Terms = () => {
 
     return (
         <div className='w-full mt-[60px]'>
+            <Helmet
+                 title="Terms and Conditions"
+                 description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
+                 link='/Terms-and-Conditions'
+                noIndex={true}
+            />
             <div className='flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px] w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
                 {terms.map((term, index) => (
                     <div key={index} className='flex flex-col gap-4'>

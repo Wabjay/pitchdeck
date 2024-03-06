@@ -17,11 +17,12 @@ import { store } from "../store";
 
 const SinglePost = () => {
   let params = useParams();
-  const { setIsLoading } = store();
+  const { blogId } = store();
   const [post, setPost] = useState({});
   const [postLists, setPostList] = useState([]);
 
-  const getCollectionRef = doc(db, "posts", params.post);
+  // const getCollectionRef = doc(db, "posts", params.post);
+  const getCollectionRef = doc(db, "posts", blogId);
 
   const postsCollectionRef = query(
     collection(db, "posts"),
@@ -33,13 +34,13 @@ const SinglePost = () => {
 
   useEffect(() => {
     // Get all Post
-    setIsLoading(true);
+    // setIsLoading(true);
 
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
 
-      setIsLoading(false);
+      // setIsLoading(false);
     };
 
     getPosts();
@@ -47,10 +48,10 @@ const SinglePost = () => {
     const getPost = async () => {
       const data = await getDoc(getCollectionRef);
       setPost(data.data());
-      setIsLoading(false);
+      // setIsLoading(false);
     };
     getPost();
-  }, [getCollectionRef, postsCollectionRef, setIsLoading]);
+  }, [getCollectionRef, postsCollectionRef]);
 
   return (
     <div className="mt-[60px] w-full">
@@ -73,7 +74,7 @@ const SinglePost = () => {
             <img src={Arrow} alt="" className="rotate-180" />
             <p>Back</p>
           </button>
-          <p className="capitalize text-[24px] font-bold leading-[32px] tracking-[-0.96px] tablet:text-[32px] tablet:leading-[39px] tablet:tracking-[-1px] laptop:text-[48px] laptop:leading-[40px] text-[#2E2E27] w-fit">
+          <p className="capitalize text-24 font-bold tablet:text-32 laptop:text-48 text-[#2E2E27] w-fit">
             {post?.title}
           </p>
         </div>
@@ -105,7 +106,7 @@ const SinglePost = () => {
               postLists.map(
                 (post, i) =>
                   (isBigScreen ? i < 3 : i < 2) &&
-                  post.id !== params.post && (
+                  post.id !== blogId && (
                     <>
                       <BlogCard
                         key={post.id}

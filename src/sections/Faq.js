@@ -13,10 +13,6 @@ const Faq = () => {
     question: "Can you incorporate branding elements into the Pitchdeck Design?",
     answer: "Absolutely! We understand the importance of consistent branding across all communication channels. Our designers can seamlessly integrate your company's logo, color palette, typography, and other branding elements into the pitch deck design to ensure a cohesive visual identity."
   },
-  // {
-  //   question: "Which payment options and currencies do you accept?",
-  //   answer: "We accept all payments and currencies via paypal and credit card. We use lemon squeezy to accept payments, Contact us if you need an alternative payment methods."
-  // },
   {
     question: "How long does it take to create a beautiful presentation design?",
     answer: "The timeline for creating a pitch deck design depends on various factors such as the complexity of the content, the level of customization required and the plan subscribed to .  We have a plan for 4-7 days and another plan of 1-3 days depending on how fast you want it"
