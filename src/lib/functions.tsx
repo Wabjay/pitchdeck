@@ -31,3 +31,15 @@ export const shuffleArray =  async(array: any[]) => {
       throw error; // Re-throw the error to propagate it further
     }
   };
+
+
+  export const loadByCategory = async ({category}: {category: string}) => {
+    try {
+      const response = await axios.get(`/pitch/${category}`);
+      // console.log(response.data)
+      return response.data
+    } catch (error) {
+      console.error('Error in sort function:', error);
+      throw error; // Re-throw the error to propagate it further
+    }
+  };

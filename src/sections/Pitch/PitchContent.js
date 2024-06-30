@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-import axios from '../lib/axios';
-import Loading from '../component/LoadingComponent';
-import SearchPitch from '../component/pitchdeck/SearchPitch';
-import DynamicListComponent from '../component/pitchdeck/PitchAndTemplateArray';
-import { store } from '../store';
-import { loadPitches, loadTemplates } from '../lib/functions';
+import axios from '../../lib/axios';
+import Loading from '../../component/LoadingComponent';
+import SearchPitch from '../../component/pitchdeck/SearchPitch';
+import DynamicListComponent from '../../component/pitchdeck/PitchAndTemplateArray';
+import { store } from '../../store';
+import { loadPitches, loadTemplates } from '../../lib/functions';
 
 
 
@@ -51,7 +51,7 @@ const PitchContent = () => {
       if (searchInput) {
         setActiveTag('All decks')
         // return loadedPitches.filter(pitch => pitch.title.toLowerCase().includes(wordsArray) || pitch.about.includes(wordsArray));
-        const newArray = loadedPitches.filter(pitch => wordsArray.some(word =>  pitch.tag.toLowerCase().includes(word) || pitch.amountRaised.includes(word)  || pitch.title.toLowerCase().includes(word) || pitch.about.includes(word.length > 2 && word)));
+        const newArray = loadedPitches.filter(pitch => wordsArray.some(word =>  pitch.tag.toLowerCase().includes(word) || pitch.amountRaised.includes(word)  || pitch.title.toLowerCase().includes(word) || (pitch.about.includes(word) && word.length > 2)));
         return newArray
       }
       if (!searchInput && !activeTag) {

@@ -3,6 +3,7 @@ import EmptyPitch from "../EmptyPitch";
 import TemplateCard from "../template/TemplateCard";
 import PitchCard from "./PitchCard";
 import { store } from "../../store";
+import GenerateSitemap from "../GenerateSitemap";
 
 const DynamicListComponent = () => {
   const { templates, pitches } = store();
@@ -50,6 +51,8 @@ const DynamicListComponent = () => {
             ))}
         </div>
       ))}
+    {/* <GenerateSitemap templates={templates} blogs={null} pitches={pitches} /> */}
+
     </>
   );
 };

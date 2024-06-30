@@ -1,19 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Arrow from "../assets/back.svg";
 import Helmet from "../component/MetadataNew";
 import SideSection from "../component/template/SideSection";
 import { store } from "../store";
 import { createSlug } from "../component/slug";
-import FooterPitches from "../sections/FooterPitches"
+import FooterPitches from "../sections/Pitch/FooterPitches"
 import { useCookies } from "react-cookie";
 
 import LoadImage from "../component/LoadImage";
+import Schema from "../component/Schema";
 
 const SingleTemplate = () => {
   let params = useParams();
   const { fetchSingleTemplate, getId, template, user, setShowLogin } = store();
   const [cookies, setCookie] = useCookies(["template", "isLogged"]);
+ 
 
   const navigate = useNavigate();
 
@@ -47,6 +49,7 @@ const SingleTemplate = () => {
   return (
     <div  onContextMenu={handleContextMenu}  className="mt-[60px] w-full">
       {template && (
+        <>
         <Helmet
         title={template.name}
         description={template.about}
@@ -54,6 +57,13 @@ const SingleTemplate = () => {
         link={'/template/' + template.name}
         addPostfixTitle={true}
     />
+    <Schema
+            name={template.title}
+            description={template.about}
+            url={`/template/${template.title}`}
+            imageUrl={template.templateCoverImageUrl}
+          />
+          </>
       )}
       {/* // Top Section */}
       <div className="bg-[#F2F1E8]">

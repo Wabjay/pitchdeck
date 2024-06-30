@@ -8,13 +8,13 @@ const DataCard = (email: any) => {
   const [lastName, setlastName] = useState("");
   const [userName, setUserName] = useState("@");
   const { email: userEmail } = email;
-  const { setLoginWithCard, setShowData, setShowLogin, setShowOTP } = store();
+  const { setLoginWithCard, setShowData, setShowLogin, setShowOTP, address } = store();
 
   const register = async () => {
     try {
       await axios.post(
         "auth/register",
-        { email: userEmail, firstName, lastName, userName },
+        { email: userEmail, firstName, lastName, userName, userLocation: address },
         {
           headers: { "Content-Type": "application/json" },
         }

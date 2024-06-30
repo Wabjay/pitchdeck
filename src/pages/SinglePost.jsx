@@ -14,64 +14,66 @@ import BlogCard from "../component/BlogCard";
 import Arrow from "../assets/arrowRight.svg";
 import MetadataComponent from "../component/Metadata";
 import { store } from "../store";
+import { createSlug } from "../component/slug";
 
 const SinglePost = () => {
   let params = useParams();
-  const { blogId } = store();
+  // const { blogId, blogTitle } = store();
+// console.log(params.post)
+
   const [post, setPost] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const [postLists, setPostList] = useState([]);
-
+  // eslint-disable-next-line no-use-before-define
   // const getCollectionRef = doc(db, "posts", params.post);
-  const getCollectionRef = doc(db, "posts", blogId);
-
-  const postsCollectionRef = query(
-    collection(db, "posts"),
-    orderBy("date", "desc")
-  );
+  const postsCollectionRef = collection(db, "posts");
   const navigate = useNavigate();
 
+
+  // const isSmallScreen = useMediaQuery({ query: '(max-width: 1023px)' })
   const isBigScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
   useEffect(() => {
     // Get all Post
-    // setIsLoading(true);
 
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+const list = (data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
 
-      // setIsLoading(false);
+list.map( post => createSlug(post.title) === params.post && setPost(post) )
+      
+setIsLoading(false);
     };
+
 
     getPosts();
+
+
     // Get Single Post
-    const getPost = async () => {
-      const data = await getDoc(getCollectionRef);
-      setPost(data.data());
-      // setIsLoading(false);
-    };
-    getPost();
-  }, [getCollectionRef, postsCollectionRef]);
+    // const getPost = async () => {
+    //   const data = await getDoc(getCollectionRef);
+
+    //   setPost(data.data());
+    //   // console.log(data.data());
+    // };
+    // getPost();
+
+    
+  }, [params.post, postsCollectionRef]);
 
   return (
-    <div className="mt-[60px] w-full">
-      {post.title && (
-        <MetadataComponent
-          title={post?.title}
-          description={post?.postText}
-          image={post?.image}
-          page={params.post}
-        />
-      )}
+    <div className="w-full">
       {/* // Top Section */}
-      <div className="bg-[#EEFCF5]">
+      
+                 <div className="bg-[#EEFCF5]">
         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
           <button
             className="flex w-fit items-center bg-white p-3 rounded-[8px] border border-[#D2D2CF] shadow-backButton mb-8"
             onClick={() => navigate(-1)}
             type="button"
           >
-            <img src={Arrow} alt="" className="rotate-180" />
+            <img src={Arrow} alt="" className="rotate-[180deg]" />
             <p>Back</p>
           </button>
           <p className="capitalize text-24 font-bold tablet:text-32 laptop:text-48 text-[#2E2E27] w-fit">
@@ -81,18 +83,19 @@ const SinglePost = () => {
       </div>
 
       <div className="bg-[#FFF]">
-        <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
-          <div className="">
-            <div className="my-6">
-              {/* {console.log(post?.postText)} */}
-              <p
-                className="singlePost"
-                dangerouslySetInnerHTML={{ __html: post?.postText }}
-              ></p>
-            </div>
-          </div>
-        </div>
-      </div>
+         <div className="w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]">
+           <div className="">
+             <div className="my-6">
+               {/* {console.log(post?.postText)} */}
+               <p
+                 className="singlePost"
+                 dangerouslySetInnerHTML={{ __html: post?.postText }}
+               ></p>
+             </div>
+           </div>
+         </div>
+       </div>
+
 
       {/* Recent Posts */}
       <div className="bg-[#F2F1E8]">
@@ -106,17 +109,17 @@ const SinglePost = () => {
               postLists.map(
                 (post, i) =>
                   (isBigScreen ? i < 3 : i < 2) &&
-                  post.id !== blogId && (
+                  createSlug(post.title) !== params.post && (
                     <>
                       <BlogCard
                         key={post.id}
                         id={post.id}
                         date={post.date}
                         image={post.image}
-                        desc={post.title}
+                        title={post.title}
                       />
                     </>
-                  )
+                   )
               )}
           </div>
         </div>

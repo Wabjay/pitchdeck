@@ -1,9 +1,9 @@
 import  { useEffect, useState } from "react";
-import PitchCard from "../component/pitchdeck/PitchCard";
+import PitchCard from "../../component/pitchdeck/PitchCard";
 import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
-import { createSlug } from "../component/slug";
-import axios from "../lib/axios";
+import { createSlug } from "../../component/slug";
+import axios from "../../lib/axios";
 import { useQuery } from "react-query";
 
 const loadPitches = async () => {

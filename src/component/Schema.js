@@ -6,7 +6,7 @@ const MAIN_KEYWORDS = "pitch deck design, create pitch deck, design, content"
 
 const DEFAULT_IMAGE_CARD = "https://pitchdeck.design/card.jpg"
 const DEFAULT_TITLE = "Pitchdeck design | Create Pitchdeck, Find Pitchdeck from top companies"
-const DEFAULT_DESCRIPTION = "Pitchdeck Design supports your business to design beautiful powerpoint slides for your next presentation to get the numbers"
+const DEFAULT_DESCRIPTION = "Browse a list of winning pitch deck examples from founders that have closed rounds of investments from angel investors"
 
 const FAVICON_SOURCE = "https://pitchdeck.design/favicon.ico"
 

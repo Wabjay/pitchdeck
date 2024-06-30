@@ -1,6 +1,7 @@
-import Hero from "../sections/TemplateHero";
-import TemplateContent from "../sections/TemplateContent";
+import Hero from "../sections/Template/TemplateHero";
+import TemplateContent from "../sections/Template/TemplateContent";
 import Helmet from "../component/MetadataNew";
+import Schema from "../component/Schema";
 
 const Home = () => {
 
@@ -10,11 +11,15 @@ const Home = () => {
     <>
         <Helmet
                 title="Templates"
-                description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups"
+                description="Pre-made Powerpoint, Google slides templates, and Pitch deck templates for your startup"
                 link='/template'
                 addPostfixTitle={true}
             />
-
+ <Schema
+          name={'Templates'}
+          description={'Pre-made Powerpoint, Google slides templates, and Pitch deck templates for your startup'}
+          url={`/template`} imageUrl={undefined}         
+           />
       <div className="mt-[60px]">
         <Hero />
        <TemplateContent/>

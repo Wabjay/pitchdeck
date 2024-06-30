@@ -30,3 +30,25 @@ code {
 .singlePost{
 line-height: 24px;
 }
+.subcribe_button{
+  width: 100%;
+}
+
+@media screen and (min-width: 576px){
+.last-test{
+  flex-direction: row !important;
+}
+}
+@media screen and (min-width: 1024px){
+  .last-test{
+    flex-direction: column !important;
+  }
+.pricingCards{
+display: flex;
+}
+
+.subcribe_button{
+  width: 140px;
+}
+
+}

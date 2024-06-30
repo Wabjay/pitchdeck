@@ -1,8 +1,9 @@
-import Hero from "../sections/PitchHero";
-import PitchContent from "../sections/PitchContent";
+import Hero from "../sections/Pitch/PitchHero";
+import PitchContent from "../sections/Pitch/PitchContent";
 import MetadataComponent from "../component/Metadata";
 import Helmet from "../component/MetadataNew";
 import Schema from "../component/Schema";
+// import ScrollToTopButton from "../component/ScrollToTopButton";
 
 const Home = () => {
 

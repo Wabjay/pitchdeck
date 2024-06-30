@@ -11,17 +11,26 @@ import { useNavigate, useLocation } from "react-router-dom";
 import LoadImage from '../component/LoadImage';
 
 const Navbar = () => {
-    const [visibility, setVisibility,] = useState(false)
+    const [cookies, setCookie, removeCookie] = useCookies(["user", "token", "isLogged"]);
     const isSmallScreen = useMediaQuery({ query: '(max-width: 1023px)' })
     const navigate = useNavigate()
     const params = useLocation().pathname
     const { isLogged, user, setlink, setShowLogin } = store()
+    const [visibility, setVisibility,] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const [cookies, setCookie, removeCookie] = useCookies(["user", "token", "isLogged"]);
+
+
+
+    const toggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
+    };
+
     // eslint-disable-next-line no-lone-blocks
 
     const toggleNavbar = () => {
         visibility ? setVisibility(false) : setVisibility(true)
+        setIsDropdownOpen(false);
     }
     const logout = () => {
         setCookie("user", "")
@@ -29,7 +38,6 @@ const Navbar = () => {
         setCookie("isLogged", false);
         setlink(`/`)
         navigate('/')
-
     }
 
     const login = () => {
@@ -61,6 +69,19 @@ const Navbar = () => {
                                             <li className="" onClick={toggleNavbar}> <Link to='/make-deck' className={`text-[#0A0A0A] text-sm leading-5 font-medium ${params.includes('make-deck') && "text-myGreen-400"}`}>Make a deck</Link> </li>
                                             <li className="" onClick={toggleNavbar}> <Link to='/template' className={`text-[#0A0A0A] text-sm leading-5 font-medium ${params.includes('template') && "text-myGreen-400"}`}>Shop</Link> </li>
                                             <li className="" onClick={toggleNavbar}> <Link to='/blog' className={`text-[#0A0A0A] text-sm leading-5 font-medium ${params.includes('blog') && "text-myGreen-400"}`}>Blog</Link> </li>
+                                          
+                                            {/* <li class="relative inline-block text-left">
+                                                <button onClick={toggleDropdown} className={`text-[#0A0A0A] text-sm leading-5 font-medium ${params.includes('generate') && "text-myGreen-400"}`}>Free tools v</button>
+                                                
+                                               {isDropdownOpen && (
+                                                <div class="absolute z-10 -ml-4 mt-3 transform px-2 w-max bg-white border border-white-1 shadow-dropdown">
+                                                    <Link to='/generate-terms' onClick={toggleNavbar} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Terms and condition generator</Link>
+                                                    <Link to='/generate-policy' onClick={toggleNavbar} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Privacy policy generator</Link>
+                                                    <Link to='/generate-refund' onClick={toggleNavbar} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Refund policy generator</Link>
+                                                </div>
+                                                )} 
+                                            </li> */}
+
                                             <li className="" onClick={toggleNavbar}> <Link to='/aboutus' className={`text-[#0A0A0A] text-sm leading-5 font-medium ${params.includes('aboutus') && "text-myGreen-400"}`}>About us</Link> </li>
 
                                             {isLogged ?
@@ -81,10 +102,24 @@ const Navbar = () => {
                                     </div>}
                             </>
                                 :
-                                <ul className="flex font-medium flex-row items-center gap-[56px]">
+                                <ul className="flex font-medium flex-row items-center gap-[50px] laptop:gap-[30px] desktop:gap-[50px]">
                                     <li className=""> <Link to='/make-deck' className={`text-[#0A0A0A] text-sm leading-5 font-medium hover:text-myGreen-400 ${params.includes('make-deck') && "text-myGreen-400"}`}>Make a deck</Link> </li>
                                     <li className=""> <Link to='/template' className={`text-[#0A0A0A] text-sm leading-5 font-medium hover:text-myGreen-400 ${params.includes('template') && "text-myGreen-400"}`}>Shop</Link> </li>
                                     <li className="">  <Link to='/blog' className={`text-[#0A0A0A] text-sm leading-5 font-medium hover:text-myGreen-400 ${params.includes('blog') && "text-myGreen-400"}`}>Blog</Link> </li>
+                                    
+                                    
+                                    {/* <li className="relative inline-block text-left">
+                                                <button onClick={toggleDropdown} className={`text-[#0A0A0A] text-sm leading-5 font-medium hover:text-myGreen-400 ${params.includes('generate') && "text-myGreen-400"}`}>Free tools v</button>
+                                                
+                                                {isDropdownOpen && (
+                                                <div className="absolute z-10 -ml-4 mt-3 transform px-2 w-max bg-white border border-white-1 shadow-dropdown ">
+                                                    <Link to='/generate-terms' onClick={toggleDropdown} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Terms and condition generator</Link>
+                                                    <Link to='/generate-policy' onClick={toggleDropdown} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Privacy policy generator</Link>
+                                                    <Link to='/generate-refund' onClick={toggleDropdown} className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">Refund policy generator</Link>
+                                                </div>
+                                                )}
+                                            </li> */}
+
                                     <li className=""> <Link to='/aboutus' className={`text-[#0A0A0A] text-sm leading-5 font-medium hover:text-myGreen-400 ${params.includes('aboutus') && "text-myGreen-400"}`}>About us</Link> </li>
                                     {isLogged ? <div className='flex items-center gap-6'>
                                         <p>{user?.userName}</p>

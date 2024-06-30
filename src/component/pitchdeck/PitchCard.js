@@ -8,7 +8,7 @@ import Skeleton from '../Skeleton';
 import LoadImage from '../LoadImage';
 
 const PitchCard = ({ pitch }) => {
-
+// console.log(pitch.title)
   return (
 
     <Link to={{ 
@@ -30,7 +30,7 @@ const PitchCard = ({ pitch }) => {
           </div>
 
           <p className='text-12 font-normal text-[#2E2E27] P-3 flex'>
-            <Skeleton>{pitch?.contentImagesUrls?.length} pages </Skeleton>
+            <Skeleton>{pitch?.contentImagesUrls?.length + 1} pages </Skeleton>
             <Skeleton height={0} >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <circle cx="7.5" cy="8.97321" r="1.5" fill="#2E2E27" />

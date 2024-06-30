@@ -1,9 +1,9 @@
-import { store } from '../store'
+import { store } from '../../store'
 import { useEffect, useMemo } from 'react'
-import axios from '../lib/axios'
-import TemplateCard from '../component/template/TemplateCard'
+import axios from '../../lib/axios'
+import TemplateCard from '../../component/template/TemplateCard'
 import { useQuery } from 'react-query';
-import { loadTemplates } from '../lib/functions';
+import { loadTemplates } from '../../lib/functions';
 
 
 
@@ -36,7 +36,7 @@ const TemplateContent = () => {
             />
           ))}
         </div>
-      </div>
+     </div>
     </div>
   )
 }

@@ -5,9 +5,8 @@ import Arrow from "../assets/back.svg";
 import Helmet from "../component/MetadataNew";
 import SideSection from "../component/pitchdeck/SideSection";
 import { store } from "../store";
-import FooterPitches from "../sections/FooterPitches";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import FooterPitches from "../sections/Pitch/FooterPitches";
+import "react-loading-skeleton/dist/skeleton.css";
 import LoadImage from "../component/LoadImage";
 import Schema from "../component/Schema";
 
@@ -15,9 +14,18 @@ const SinglePitch = () => {
   let params = useParams();
   const [cookies, setCookie] = useCookies(["pitch", "isLogged"]);
   // eslint-disable-next-line no-mixed-operators, no-use-before-define
-  const [pitchDetail, setPitchDetail] = useState({})
-
-  const { fetchSinglePitch, getId, pitch, user,  setShowLogin, componentLoading } = store();
+  const {
+    fetchSinglePitch,
+    getId,
+    pitch,
+    user,
+    setCount,
+    count,
+    setShowLogin,
+  } = store();
+  const [counter, setCounter] = useState(count);
+  const [counted, setCounted] = useState(false);
+  const [link, setLink] = useState('');
 
   const navigate = useNavigate();
 
@@ -25,23 +33,40 @@ const SinglePitch = () => {
     const currentPathname = window.location.pathname;
     const path = currentPathname.split("/").pop();
     const pitchTitle = params.pitch !== "" ? params.pitch : path;
-    
-    getId(pitchTitle)
+
+    setLink(currentPathname)
+    getId(pitchTitle);
     // getId(pitch);
     fetchSinglePitch(pitchTitle);
-    
-    if(!cookies.isLogged){ 
-      setShowLogin(true)
-    } 
 
-  }, [ fetchSinglePitch, params.pitch, getId, cookies.isLogged, setShowLogin]);
+    // Check if user is not logged in then countdown 10secs and show login card
+    if (!cookies.isLogged) {
+      const timer = setInterval(() => {
+        setCounter((prevCount) => prevCount - 1);
+      }, 1000);
 
-
-  const handleContextMenu = (e) =>{
-    if(user.email !== "pixelgumstudio@gmail.com"){
-       e.preventDefault()
+      // Cleanup function to clear the interval when the component unmounts
+      return () => clearInterval(timer);
     }
-  }
+  }, [fetchSinglePitch, params.pitch, getId, cookies.isLogged, setShowLogin]);
+
+  useEffect(() => {
+    counter >= 0 && setCount(counter);
+    if (!cookies.isLogged && (counted ||  count === 0)) {
+      setShowLogin(true);
+      localStorage.setItem('counted', true)
+    } else{
+      setShowLogin(false);
+    }
+
+    setCounted(localStorage.getItem('counted'))
+  }, [count, counter, setCount, setShowLogin, cookies.isLogged]);
+
+  const handleContextMenu = (e) => {
+    if (user?.email !== "pixelgumstudio@gmail.com") {
+      e.preventDefault();
+    }
+  };
 
   // const pitchSchema = {
   //   name: pitch.title,
@@ -49,7 +74,6 @@ const SinglePitch = () => {
   //   url: `https://pitchdeck.design/pitch/${pitch.title}`,
   //   imageUrl: pitch.coverImageUrl,
   // }
-
 
   return (
     <div className="mt-[60px] w-full">
@@ -64,7 +88,7 @@ const SinglePitch = () => {
           />
           <Schema
             name={pitch.title}
-            description={pitch.description}
+            description={pitch.about}
             url={`/pitch/${pitch.title}`}
             imageUrl={pitch.coverImageUrl}
           />
@@ -85,7 +109,7 @@ const SinglePitch = () => {
           </div>
 
           <div className="w-full max-w-[1272px] mx-auto laptop:px-8 desktop:px-0 desktop:ml-[144px] laptop:grid laptop:grid-cols-big desktop:grid-cols-large laptop:gap-6 desktop:gap-8 laptop:justify-end">
-            <SideSection />
+            <SideSection link={link}/>
             <div className="bg-[#F2F1E8] order-first w-full ">
               <div className="mx-auto  px-4 tablet:px-6 laptop:px-0 desktop:px-0 pb-[40px] tablet:pb-[80px] laptop:pb-[100px]">
                 <div className="mt-6 mb-8 desktop:mt-8 flex flex-col gap-8 laptop:w-fit desktop:ml-auto desktop:mr-0">

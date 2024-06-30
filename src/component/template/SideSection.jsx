@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { store } from "../../store";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import moment from "moment";
 import Skeleton from "../Skeleton";
-import LocationChecker from "../GeetLocation";
 import HiddenText from "./HiddenText";
 
 export default function SideSection() {
 
-  const { template } = store();
-  const [ price, setPrice ] = useState();
+  const { template, address } = store();
 
-  const highlight = template.pageHighlights
 
- 
-  const templatePrize = (cost)=>{
-    setPrice(cost)
-  }
+  const highlight = template?.pageHighlights
+  // const {naira, foriegn} = template?.linkToPurchase
+
 
   return (
     <div className="laptop:sticky laptop:top-[80px] py-6 laptop:p-6 text-[#2E2E27] bg-white laptop:h-fit laptop:mt-[-34px] w-full laptop:basis-big desktop:basis-large pb-4 laptop:pb-[100px]">
@@ -69,18 +65,18 @@ export default function SideSection() {
             <Skeleton>Price</Skeleton>
           </p>
           <p className="w-full text-14 leading-6 font-semibold capitalize">
-            <Skeleton>{price}</Skeleton>
+            <Skeleton>{address === "Nigeria" ?  template?.cost.naira : template?.cost.dollar}</Skeleton>
           </p>
         </div>
       </div>
-      {/* <Skeleton>
-        <Link
-          href={template.linkToPurchase}
+      <Skeleton>
+        {/* {console.log(naira)} */}
+        <a href={address === "Nigeria" ? template?.linkToPurchase.nigeria :  template?.linkToPurchase.foreign}
+          target="_blank" rel="noopener noreferrer"
           className="bg-[#21AB68] border-[#21AB68] shadow-navbarLink inline-flex items-center justify-center p-2  text-[#ffffff]  text-sm leading-5 font-normal focus:outline-none "
-        > Buy This Template </Link>
-      </Skeleton> */}
+        > Buy This Template </a>
+      </Skeleton>
 
-<LocationChecker linkToPurchase={template.linkToPurchase} purchasePrice={template.cost} setPrice={templatePrize}/>
     </div>
   );
 }

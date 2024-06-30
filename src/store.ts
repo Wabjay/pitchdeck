@@ -1,35 +1,38 @@
 import { createSlug } from "./component/slug";
 import axios from "./lib/axios";
 import { create } from "zustand";
+import Category from './pages/Category';
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 
-type pitch = {"_id":string,
-"title":string,
-"coverImageUrl":string,
-"about":string,
-"tag":string,
-"amountRaised":string,
-"contentImagesUrls":string[],
-"pdfFileUrl":string,
-"createdAt":string,
-"updatedAt":string,
-"__v": number}
+type pitch = {
+  _id: string;
+  title: string;
+  coverImageUrl: string;
+  about: string;
+  tag: string;
+  amountRaised: string;
+  contentImagesUrls: string[];
+  pdfFileUrl: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
 
-
-
-type template = {"_id":string,
-"name":string,
-"templateCoverImageUrl":string,
-"about":string,
-"numberOfPages":number,
-"cost":string,
-"templateImagesUrl":string[],
-"linkToPurchase":string,
-"deliverables":string[],
-"createdAt":string,
-"updatedAt":string,
-"__v": number}
+type template = {
+  _id: string;
+  name: string;
+  templateCoverImageUrl: string;
+  about: string;
+  numberOfPages: number;
+  cost: string;
+  templateImagesUrl: string[];
+  linkToPurchase: string;
+  deliverables: string[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
 
 type StoreState = {
   loading: boolean;
@@ -37,20 +40,25 @@ type StoreState = {
   token: string;
   link: string;
   users: [];
-  user: {}
-  isLogged: boolean,
-  showLogin: boolean,
-  loginWithCard: boolean,
-  showData: boolean,
-  showOTP: boolean,
-  tags: [],
-  images: [],
-  pitch: pitch,
-  pitches: pitch[],
-  template: template,
-  templates: template[],
-id: string, 
-blogId: string,
+  user: {};
+  isLogged: boolean;
+  showLogin: boolean;
+  loginWithCard: boolean;
+  showData: boolean;
+  showOTP: boolean;
+  tags: [];
+  images: [];
+  pitch: pitch;
+  pitches: pitch[];
+  category: pitch[];
+  template: template;
+  templates: template[];
+  blogs: [];
+  id: string;
+  blogId: string;
+  blogTitle: string;
+  address: string;
+  count: number;
 };
 
 const initialState: StoreState = {
@@ -75,7 +83,7 @@ const initialState: StoreState = {
     pdfFileUrl: "",
     createdAt: "",
     updatedAt: "",
-    __v: 0
+    __v: 0,
   },
   pitches: [],
   template: {
@@ -90,19 +98,26 @@ const initialState: StoreState = {
     deliverables: [],
     createdAt: "",
     updatedAt: "",
-    __v: 0
+    __v: 0,
   },
   templates: [],
   id: "",
   loginWithCard: false,
   componentLoading: false,
   blogId: "",
-  showOTP: false
+  showOTP: false,
+  address: "",
+  count: 10,
+  blogTitle: "",
+  blogs: [],
+  category: []
 };
 
 interface Store extends StoreState {
   setUser: (user: {}) => void;
   setlink: (link: "") => void;
+  setAddress: (address: string) => void;
+  setCount: (count: number) => void;
   setTags: (tags: []) => void;
   setImages: (images: []) => void;
   setToken: (token: string) => void;
@@ -115,10 +130,13 @@ interface Store extends StoreState {
   setIsComponentLoading: (status: boolean) => void;
   fetchSinglePitch: (id: string) => void;
   fetchPitches: (pitches: pitch[]) => void;
+  fetchCategory: (category: Promise<pitch[]>) => void;
+  fetchBlogs: (blogs: []) => void;
   fetchSingleTemplate: (id: string) => void;
   fetchTemplates: (templates: template[]) => void;
   getId: (title: string) => void;
   getBlogId: (id: string) => void;
+  getBlogTitle: (id: string) => void;
   resetState: () => void;
 }
 
@@ -128,12 +146,11 @@ export const store = create<Store>((set, get) => ({
   resetState: () => set(initialState),
 
   setToken: (token: any) => {
-    if (token) {  
-        set((_state: any) => ({ token: token, isLogged: true  }))
-    } else{
-      set((_state: any) => ({ token: token, isLogged: false  }))
-
-    };
+    if (token) {
+      set((_state: any) => ({ token: token, isLogged: true }));
+    } else {
+      set((_state: any) => ({ token: token, isLogged: false }));
+    }
   },
   setShowLogin: (show: any) => {
     set((state: any) => ({ showLogin: show }));
@@ -170,6 +187,15 @@ export const store = create<Store>((set, get) => ({
     set((state: any) => ({ user: user }));
   },
 
+  setAddress: (address: string) => {
+    // console.log(address)
+    set((state) => ({ address: address }));
+  },
+
+  setCount: (count: number) => {
+    set((state) => ({ count: count }));
+  },
+
   // Temporary Use
   setTags: (tags: []) => {
     // Destructure the array object to just array of strings
@@ -196,10 +222,30 @@ export const store = create<Store>((set, get) => ({
   getBlogId: async (id: string) => {
     set((state: any) => ({ blogId: id }));
   },
+  getBlogTitle: async (title: string) => {
+    set((state: any) => ({ blogTitle: title }));
+  },
 
   fetchPitches: async (response: any) => {
     // console.log(response)
     set((state: any) => ({ pitches: response }));
+  },
+
+
+  fetchCategory : async (response: Promise<pitch[]>) => {
+    try {
+      // Wait for the Promise to resolve and extract the JSON data
+      const jsonData = await response;
+      // console.log(jsonData); // Ensure that you're getting the JSON data
+      set((state: any) => ({ category: jsonData }));
+    } catch (error) {
+      console.error('Error fetching category:', error);
+    }
+  },
+
+  fetchBlogs: async (response: any) => {
+    // console.log(response)
+    set((state: any) => ({ blogs: response }));
   },
 
   fetchSinglePitch: async (title: string) => {
@@ -225,9 +271,11 @@ export const store = create<Store>((set, get) => ({
     set({ loading: true });
     try {
       // await axios.get(`/templates/template/${title}`).then(function (response) {
-        await axios.get(`/templates/search?name=${title}`).then(function (response) {
-        set({ template: response.data[0], loading: false });
-      });
+      await axios
+        .get(`/templates/search?name=${title}`)
+        .then(function (response) {
+          set({ template: response.data[0], loading: false });
+        });
     } catch (error) {
       console.error("Error fetching data:", error);
       set({ loading: false });
