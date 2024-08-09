@@ -10,7 +10,7 @@ import { loadPitches, loadTemplates } from '../../lib/functions';
 
 
 
-const PitchContent = () => {
+const PitchContent = ({loggedIn}) => {
   const [searchInput, setSearch] = useState('');
   const [activeTag, setActiveTag] = useState('All decks');
 
@@ -86,19 +86,24 @@ const PitchContent = () => {
 
 
   return (
-    <div className='w-full bg-[#F2F1E8]' id='pricing'>
-      <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 desktop:px-0 pb-[40px] tablet:pb-[80px] laptop:pb-[100px]'>
+    <div className='relative z-20 w-full bg-[#F2F1E8]' id='pricing'>
+      <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 desktop:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
+        
+        <div className='flex flex-col gap-4 tablet:!flex-row tablet:!gap-10 justify-between items-center mb-6'>
+        <p className='text-20 font-bold whitespace-nowrap tablet:text-32 text-[#000]'>Pitch decks</p>  
         <SearchPitch enterSearch={search} />
-        <div className='flex flex-wrap justify-center gap-x-2 gap-y-[10px] mb-6 desktop:mb-[50px] desktop:gap-x-6'>
+        </div>
+        <div className='flex flex-wrap justify-center tablet:!justify-start gap-x-2 gap-y-[10px] mb-6 desktop:gap-x-6'>
           {tags?.map(tag => (
             <p key={tag._id} onClick={() => sortTag(tag)} className={`cursor-pointer bg-white text-14 font-medium rounded-[9999px] px-3 py-[6px] border hover:border-[#21AB68] capitalize ${activeTag === tag ? "border-[#21AB68]" : "border-[#d2d2cf]"}`}>{tag}</p>
           ))}
         </div>
         <div className='grid tablet:grid-cols-2 laptop:grid-cols-3 gap-6 tablet:gap-[30px] laptop:flex-row laptop:gap-[30px] min-h-[200px] relative h-fit'>
           <Loading />
-          <DynamicListComponent />
+          <DynamicListComponent loggedIn={loggedIn} />
         </div>
       </div>
+      <div className="absolute bottom-[-20px] left-0 w-full h-16 bg-gradient-to-b from-[rgba(243, 244, 246, 0.3)] to-white  filter blur-md backdrop-blur-md"></div>
     </div>
   )
 }

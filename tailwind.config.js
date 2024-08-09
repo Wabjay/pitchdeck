@@ -9,10 +9,10 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'tablet': '576px',
       'small': '375px',
+      'tablet': '576px',
       // => @media (min-width: 640px) { ... }
-
+      'ipad': '768px',
       'laptop': '1024px',
       // => @media (min-width: 1024px) { ... }
 
@@ -35,7 +35,7 @@ module.exports = {
       boxShadow: {
         'navbarLink': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
         'backButton': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
-        'dropdown' : '0px 8px 16px 0px rgba(3, 7, 18, 0.08), 0px 0px 0px 1px rgba(3, 7, 18, 0.08)',
+        'dropdown': '0px 8px 16px 0px rgba(3, 7, 18, 0.08), 0px 0px 0px 1px rgba(3, 7, 18, 0.08)',
         'greenButton': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
         'buttonError': '0px 0px 0px 3px rgba(225, 29, 72, 0.15)',
         'buttonDefault': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16)',
@@ -54,7 +54,7 @@ module.exports = {
         'testimonial': "url('/src/assets/Testimonial-logo.svg')",
         'overlay': 'linear-gradient(180deg, rgba(1, 26, 39, 0.28) 4.69%, rgba(1, 26, 39, 0.25) 56.25%, rgba(1, 26, 39, 0.37) 100%))',
         'disabled': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFF',
-      'priceBg': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFF',
+        'priceBg': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFF',
 
       },
       colors: {
@@ -65,7 +65,7 @@ module.exports = {
         'grey-800': '#0B0B00',
         'error': '#E03C00',
         'borderDefault': '#E8E8EA',
-        
+
         'borderBgHover': '#F9F9F9',
         'disabledButton': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), var(--white, #FFF)'
       }
@@ -106,10 +106,10 @@ module.exports = {
       }],
 
     },
-    
+
   },
   plugins: [
-   
+
   ],
 }
 

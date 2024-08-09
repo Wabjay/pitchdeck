@@ -129,7 +129,7 @@ function App() {
             {/* <Route path="/sitemap" element={<Sitemap />} /> */}
             </>}
             </Routes>
-          <Waitlist />
+          {/* <Waitlist /> */}
           <Footer />
           {showLogin && <Login/>}
           {loginWithCard && <LoginCard getEmail={getEmail}/>}

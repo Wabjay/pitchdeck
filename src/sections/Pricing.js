@@ -1,4 +1,4 @@
-import Starter from '../assets/Starter.svg'
+// import Starter from '../assets/Starter.svg'
 import Budget from '../assets/Budget.svg'
 import Standard from '../assets/Standard.svg'
 import Pro from '../assets/Company.svg'
@@ -9,10 +9,10 @@ import './../index.css';
 const Pricing = () => {
 
   const product = [
-    { plan: 'Starter', active: false, icon: Starter, heading: 'For testing out our capabilities', price: '99', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/starter-plan?_gl=1*1pj32tz*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcxMDI4NjUwNS4yMy4xLjE3MTAyODk3ODIuMC4wLjA", benefits: ["1-day turnaround time", "5 pages deck slides", "2 revisions on pitcchdeck", "Get figma file "] },
+    // { plan: 'Starter', active: false, icon: Starter, heading: 'For testing out our capabilities', price: '99', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/starter-plan?_gl=1*1pj32tz*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcxMDI4NjUwNS4yMy4xLjE3MTAyODk3ODIuMC4wLjA", benefits: ["1-day turnaround time", "5 pages deck slides", "2 revisions on pitcchdeck", "Get figma file "] },
     { plan: 'Budget Friendly', active: false, icon: Budget, heading: 'For startups with a mini-budget', price: '229', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/BudgetFriendlyplan?_gl=1*1xt6kcr*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcwMTAyMzE2My43LjEuMTcwMTAyNDY5OC4wLjAuMA", benefits: ["5-7 days turnaround time", "10 pages deck slides", "4 revisions on pitcchdeck", "Customer support", 'Figma design', 'PDF export'] },
-    { plan: 'Standard', active: true,  icon: Standard, heading: 'For startups with a small budget', price: '429', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/standardplan?_gl=1*1xt6kcr*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcwMTAyMzE2My43LjEuMTcwMTAyNDY5OC4wLjAuMA", benefits: ["2 - 4  days turnaround time", "12+ pages deck", "Unlimited revisions", "Content copy changes", "Customer support","Figma design","PDF export", "Powerpoint copy", "Canva design", 'Stock photos'] },
-    { plan: 'Pro', active: false, icon: Pro, heading: 'For startups with funding', price: '729', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/Professionalplan?_gl=1*1q8lwtt*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcxMDI4NjUwNS4yMy4xLjE3MTAyODk3ODUuMC4wLjA", benefits: ["1 - 2  days turnaround time","12+ pages deck", "Unlimited revisions", "Content copy changes", "Customer support","Figma design","PDF export", "Powerpoint copy", "Canva design", 'Stock photos', "Illustrations"] },
+    { plan: 'Standard', active: true,  icon: Standard, heading: 'For startups with a small budget', price: '599', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/standardplan?_gl=1*1xt6kcr*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcwMTAyMzE2My43LjEuMTcwMTAyNDY5OC4wLjAuMA", benefits: ["2 - 4  days turnaround time", "12+ pages deck", "Unlimited revisions", "Content copy changes", "Customer support","Figma design","PDF export", "Powerpoint copy", "Canva design", 'Stock photos'] },
+    { plan: 'Pro', active: false, icon: Pro, heading: 'For startups with funding', price: '999', color: 'grey', text: "Design a presentation", link: "https://olayanjuidris.gumroad.com/l/Professionalplan?_gl=1*1q8lwtt*_ga*MTk2ODkyNDEwMS4xNjkyODgzODM2*_ga_6LJN6D94N6*MTcxMDI4NjUwNS4yMy4xLjE3MTAyODk3ODUuMC4wLjA", benefits: ["1 - 2  days turnaround time","12+ pages deck", "Unlimited revisions", "Content copy changes", "Customer support","Figma design","PDF export", "Powerpoint copy", "Canva design", 'Stock photos', "Illustrations"] },
   ]
   return (
     <div className=''>

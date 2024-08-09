@@ -3,9 +3,8 @@ import EmptyPitch from "../EmptyPitch";
 import TemplateCard from "../template/TemplateCard";
 import PitchCard from "./PitchCard";
 import { store } from "../../store";
-import GenerateSitemap from "../GenerateSitemap";
 
-const DynamicListComponent = () => {
+const DynamicListComponent = ({loggedIn} :{loggedIn: boolean}) => {
   const { templates, pitches } = store();
   const [array, setArray] = useState<any[]>([]);
 
@@ -17,6 +16,8 @@ const DynamicListComponent = () => {
         : [];
     return [item, ...additionalObject];
   });
+
+
 
   useEffect(() => {
     const shuffleArray = async () => {
@@ -41,16 +42,21 @@ const DynamicListComponent = () => {
     <EmptyPitch />
   ) : (
     <>
-      {mappedArray?.map((item: any[], index: number) => (
-        <div key={index}>
-          {typeof item === "object" &&
-            (item.hasOwnProperty("cost") ? (
-              <TemplateCard key={index} template={item} />
-            ) : (
-              <PitchCard key={index} pitch={item} />
-            ))}
-        </div>
-      ))}
+   {mappedArray?.map((item: any[], index: number) => {
+  const shouldShow = !loggedIn ? index <= 11 : true;
+
+  if (!shouldShow || typeof item !== "object") return null;
+
+  // Choose the appropriate component based on whether "cost" exists in item
+  const Component = item.hasOwnProperty("cost") ? TemplateCard : PitchCard;
+
+  return (
+    <div key={index}>
+      <Component template={item} pitch={item} />
+    </div>
+  );
+})}
+
     {/* <GenerateSitemap templates={templates} blogs={null} pitches={pitches} /> */}
 
     </>

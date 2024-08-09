@@ -6,8 +6,8 @@ const DOMAIN = "https://pitchdeck.design"
 const MAIN_KEYWORDS = "pitch deck design, create pitch deck, design, content"
 
 const DEFAULT_IMAGE_CARD = "https://pitchdeck.design/card.jpg"
-const DEFAULT_TITLE = "Pitchdeck design | Create Pitchdeck, Find Pitchdeck from top companies"
-const DEFAULT_DESCRIPTION = "Pitchdeck Design supports your business to design beautiful powerpoint slides for your next presentation to get the numbers"
+const DEFAULT_TITLE = "Pitch deck - Pitch deck examples | Pitch deck template | Pitch deck designers for hire"
+const DEFAULT_DESCRIPTION = "Browse a list of free pitch deck examples from founders, Purchase a Pitch deck template for your next raise, and Hire a pitch deck designer to make a deck for you. Close funding deals with Angel investors, Filter pitch deck by industry, Raise Amount and Stage"
 
 const FAVICON_SOURCE = "https://pitchdeck.design/favicon.ico"
 
@@ -72,7 +72,7 @@ function Helmet({
       <html lang="en" />
       <meta name="title" content={metaTitle} />
 
-      <meta name="description" content={metaDesc} />
+      <meta name="description" content="Pitchdeck Design supports your business to design beautiful powerpoint slides for your next presentation to get the numbers" />
       <link rel="canonical" href={metaLink} />
       <meta name="keywords" content={metaKeywords} />
       <meta name="robots" content={metaRobots} />
@@ -96,7 +96,7 @@ function Helmet({
       <meta name="twitter:image" content={metaImageCard} />
       <meta name="twitter:url" content={metaLink} />
       {/* https://moz.com/blog/meta-referrer-tag */}
-      <title>{metaTitle}</title>
+      <title>Pitchdeck design | Create Pitchdeck, Find Pitchdeck from top companies</title>
       <meta name="referrer" content="origin-when-crossorigin" />
       
       {children}

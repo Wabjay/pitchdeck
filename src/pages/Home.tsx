@@ -3,10 +3,15 @@ import Carousel from "../sections/Carousel";
 import Presentation from "../sections/Presentation";
 import Pricing from "../sections/Pricing";
 import Faq from "../sections/Faq";
-import MetadataComponent from "../component/Metadata";
 import Helmet from "../component/MetadataNew";
 import Schema from "../component/Schema";
 import Testimonials from "../sections/Testimonials";
+import Features from "../sections/Features";
+import FeaturesOnly from "../sections/FeaturesOnly";
+import Discover from "../sections/Discover";
+import HandPick from "../sections/HandPick";
+import CustomDeck from "../sections/CustomDeck";
+
 
 const PitchDeck = () => {
   return (
@@ -21,10 +26,15 @@ const PitchDeck = () => {
       <div className="mt-[60px]">
         <Hero />
         <Carousel />
-        <Presentation />
+        <Features />
+        <FeaturesOnly />
+        {/* <Presentation /> */}
         <Pricing />
-        <Testimonials />
         <Faq />
+        <CustomDeck />
+        <Discover />
+        <HandPick />
+        {/* <Testimonials /> */}
       </div>
     </>
   );

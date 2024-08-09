@@ -6,7 +6,7 @@ import Skeleton from './Skeleton';
 
 export default function LoadImage({alt, src, style, height}) {
   return (
-    <Skeleton height={height}>
+    <Skeleton height={height ? height : 240}>
       <LazyLoadImage
     alt={alt}
     // effect="blur"

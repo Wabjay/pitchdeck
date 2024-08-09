@@ -32,29 +32,7 @@ const Footer = () => {
             {/* <Link to='/policy' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Privacy policy</Link> */}
           </div>
 
-          <div>
-          <div className='flex flex-col gap-4 whitespace-nowrap'>
-            <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>FREE TOOLS</p>
-            <Link to='/generate-terms' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Terms and conditions generator</Link>
-            <Link to='/generate-policy' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Privacy policy generator</Link>
-            <Link to='/generate-refund' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Refund policy generator</Link>
-          </div>
- <div className="hidden desktop:!hidden laptop:block mt-8">
-
-          <div  className='flex flex-col gap-4'>
-          <div className='flex flex-col gap-4 whitespace-nowrap'>
-            <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>CONTACT INFORMATION</p>
-            <a href="mailto:contactus@pitchdeck.design" className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>contactus@pitchdeck.design</a>
-          </div>
-
-          <div className='flex flex-col gap-4 whitespace-nowrap'>
-            <p className='text-[16px] font-bold leading-[22px] text-[#2E2E27]'>LEGAL</p>
-            <Link to='/terms' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Terms and Conditions</Link>
-            <Link to='/policy' className='text-[16px] font-[300] leading-[22px] text-[#2E2E27]'>Privacy policy</Link>
-          </div>
-          </div>
-          </div>
-          </div>
+          {/* <div>  */}
           <div className="laptop:hidden desktop:block">
 
           <div  className='flex flex-col gap-4'>
