@@ -1,4 +1,4 @@
 import axios from "axios";
 export default axios.create({
-  baseURL: "https://ppt-designer.cyclic.app/api",
+  baseURL: "https://api.pitchdeck.design",
 });

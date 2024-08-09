@@ -1,34 +1,836 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://pitchdeck.design/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://pitchdeck.design/template</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://pitchdeck.design/make-deck</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://pitchdeck.design/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://pitchdeck.design/aboutus</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://pitchdeck.design/aboutus</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <!-- Add more URL entries as needed -->
+        <url>
+          <loc>https://pitchdeck.design/</loc>
+ <changefreq>daily</changefreq>
+          <priority>0.8</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/template</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/make-deck</loc>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/blog</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.5</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/aboutus</loc>
+          <changefreq>monthly</changefreq>
+          <priority>0.4</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/generate-policy</loc>
+          <changefreq>monthly</changefreq>
+          <priority>0.4</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/generate-terms</loc>
+          <changefreq>monthly</changefreq>
+          <priority>0.4</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/generate-refunds</loc>
+          <changefreq>monthly</changefreq>
+          <priority>0.4</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/homecooks</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/slack-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/scrintal-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/fifth-dimension-ai</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/wework</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/we-are-onyx</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tomorrow-university</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/shopify</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/coinbase</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/scalestack</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/revolut</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/salusive-health</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/ria-health</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/purple-go</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/unito</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/wilco</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/orange</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/netmaker</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/faye</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/aether</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/phospholutions</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/ageras</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/laoshi</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/paysur</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/party-round</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/monzo</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/intercom</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/kyra</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/openfin</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/mojilala</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/brex</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/card-blanch</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/anybotics</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/stitch</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/buzzfeed</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/canva</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/dropbox</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/home61</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/pluto-ai</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/trym</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/traceair</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/airbnb</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/front-app</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/stackshare</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/alto-pharmacy</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/gable</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/plum</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/eventxtra</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/supliful</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/cleanhub</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tanbii</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/busright</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/smalls</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/honeycomb</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/forethought</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/deckmatch</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/rootine</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/uber</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/syneroid-technology</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/northspyre</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/studentfinance</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/momentum</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/-oiiai</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/backstartup</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/contentools</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/finova-finance</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/lexop</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/lexyom</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/orchard</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/reflect</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/worthix</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/pitchbob</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/usetrace</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/bigcontrols</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/pawprint</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/melodics</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/studysoup</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/cladwell</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/codec</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/idwall</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/wise</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/mio-market</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/transcend</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/simba-chain</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/fibery</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/general-assembly-class</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/nokod-security</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/copper-cow-coffee</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/yaydoo</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/sendgrid</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/theranos-original</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/backoffice</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/blue-apron</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/leafly</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/omada</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/printivo</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/streamloan</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/cardlife</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/owlr</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/claim-compass</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/icontrol</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/baloonr</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/almabase</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/plot-park-evergreen</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/crema</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/voxeet</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/supercom</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/homebot</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/adpushup</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/gestoos</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/aceup</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/beatdapp</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/blablacar</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/ai-rudder</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/binpress</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/hellobello</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/kitterly</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/iconfinder</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/floqq</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/healx</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/claap</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/equitybee</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/celer-network</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/blueboard</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/kong</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tinder</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/peloton</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/square</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tesla</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/youtube</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/zestful</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/magic-leap</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/minut</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/medstack</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/talkable</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tallyfy</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/zentist</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/pupbox</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/muck-rack</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/hello-heart</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tophatch</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/tophatch</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7 </priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/pitch/wunderlist</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/template/makerdeck-template</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/blogpost/from-sketch-to-screen-the-evolution-of-digital-product-prototyping</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/blogpost/balancing-form-and-function-the-art-of-user-centric-product-design</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/blogpost/human-centred-design-elevating-tech-innovation-through-empathy</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/fintech-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/ai-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/fashion-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/real-estate-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/pitch-for-edtech</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/restaurant-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/healthcare-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/tag/crypto-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/category/seed-round-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/category/pre-seed-pitch-deck</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+        <url>
+          <loc>https://pitchdeck.design/category/series-a-deck</loc>
+          <changefreq>weekly</changefreq>
+          
+          <priority>0.7</priority>
+          </url>
+
 </urlset>

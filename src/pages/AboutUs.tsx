@@ -1,16 +1,17 @@
 
-import MetadataComponent from "../component/Metadata";
+import Helmet from "../component/MetadataNew";
+// import MetadataComponent from "../component/Metadata";
 
 
 const AboutUs = () => {
   return (
     <>
-      <MetadataComponent
-        title="About Pitchdeck Design"
-        description="Pitchdeck Design supports your business to design beautiful powerpoint slides for your next presentation to get the numbers"
-        page="aboutus"
-        image={undefined}
-      />
+      
+      <Helmet
+        title="About"
+        link={"/aboutus"}
+        addPostfixTitle ={true}
+        />
 
       <div className="mt-[60px] bg-[#F2F1E8]">
         <div className="w-full max-w-[744px] mx-auto px-4 tablet:px-6 laptop:px-0 py-10 tablet:py-20 laptop:py-[100px]">

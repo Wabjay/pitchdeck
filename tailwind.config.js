@@ -1,11 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+
 module.exports = {
+
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    screens: {
+      'small': '375px',
+      'tablet': '576px',
+      // => @media (min-width: 640px) { ... }
+      'ipad': '768px',
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     fontFamily: {
       'san': ['Space Grotesk', ...defaultTheme.fontFamily.sans],
       'MyFont': ['"My Font"', 'serif'] // Ensure fonts with spaces have " " surrounding it.
@@ -22,16 +35,39 @@ module.exports = {
       boxShadow: {
         'navbarLink': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
         'backButton': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
+        'dropdown': '0px 8px 16px 0px rgba(3, 7, 18, 0.08), 0px 0px 0px 1px rgba(3, 7, 18, 0.08)',
+        'greenButton': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset',
+        'buttonError': '0px 0px 0px 3px rgba(225, 29, 72, 0.15)',
+        'buttonDefault': '0px 0.5px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16)',
+        'buttonFocus': '0px 0px 0px 3px rgba(59, 130, 246, 0.20)',
+        'supportButton': '0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.5px 0px 0px rgba(3, 7, 18, 0.16)',
+        'shareCard': '0px 0px 0px 1px rgba(3, 7, 18, 0.08), 0px 1px 2px -1px rgba(3, 7, 18, 0.08), 0px 2px 4px 0px rgba(3, 7, 18, 0.04)',
+        'shareLinks': '0px 1.75px 0px 0px rgba(255, 255, 255, 0.16) inset, 0px 0.25px 0px 0px rgba(3, 7, 18, 0.16), 0px 0.5px 0px 0px rgba(3, 7, 18, 0.16)'
       },
       backgroundImage: {
+        'tools-bg': 'linear-gradient(305deg, rgba(23, 219, 123, 0.88) -73.62%, #E8E6D7 71.96%);',
+        'tools-button': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFFFFF',
+        'greenBg': 'linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.00) 100%), #21AB68',
         'green-tick': "url('/src/assets/green_tick.png')",
         'white-tick': "url('/src/assets/white_tick.png')",
-        'overlay': 'var(--Overlay-color, linear-gradient(180deg, rgba(1, 26, 39, 0.28) 4.69%, rgba(1, 26, 39, 0.25) 56.25%, rgba(1, 26, 39, 0.37) 100%))'
+        'check-icon': "url('/src/assets/Check icons.svg')",
+        'testimonial': "url('/src/assets/Testimonial-logo.svg')",
+        'overlay': 'linear-gradient(180deg, rgba(1, 26, 39, 0.28) 4.69%, rgba(1, 26, 39, 0.25) 56.25%, rgba(1, 26, 39, 0.37) 100%))',
+        'disabled': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFF',
+        'priceBg': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), #FFF',
+
       },
       colors: {
         'myGreen-400': "#21AB68",
         'green-500': "#3E7B52",
+        'green-400': '#21AB68',
+        'grey-100': '#E8E8EA',
+        'grey-800': '#0B0B00',
+        'error': '#E03C00',
+        'borderDefault': '#E8E8EA',
 
+        'borderBgHover': '#F9F9F9',
+        'disabledButton': 'linear-gradient(180deg, rgba(0, 12, 20, 0.00) 3.13%, rgba(0, 12, 20, 0.03) 96.87%), var(--white, #FFF)'
       }
     },
     fontSize: {
@@ -70,18 +106,10 @@ module.exports = {
       }],
 
     },
-    screens: {
-      'tablet': '576px',
-      'small': '375px',
-      // => @media (min-width: 640px) { ... }
 
-      'laptop': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'desktop': '1280px',
-      // => @media (min-width: 1280px) { ... }
-    },
   },
-  plugins: [],
+  plugins: [
+
+  ],
 }
 

@@ -1,12 +1,8 @@
-import MetadataComponent from "../component/Metadata"
+import Helmet from "../component/MetadataNew"
 
 
 const Policy = () => {
 
-    <MetadataComponent
-    title="Privacy policies"
-    description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups" 
-    page='policy' image={undefined}      />
 
     const policies = [
         {
@@ -55,6 +51,12 @@ const Policy = () => {
 
     return (
         <div className='w-full mt-[60px]'>
+            <Helmet
+                title="Privacy policies"
+                description="Save hundred hours of Pitchdeck visual and idea research by browsing a library of 1000+ handpicked screenshots from popular startups"
+                link='/policy'
+                noIndex={true}
+            />
             <div className='flex flex-col gap-5 tablet:gap-10 laptop:gap-[50px] w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 xl:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
                 {policies.map((policy, index) => (
                     <div key={index} className='flex flex-col gap-4'>

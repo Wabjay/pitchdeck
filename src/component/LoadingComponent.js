@@ -12,7 +12,6 @@ const Loading = () => {
   return (
     componentLoading ?
       <div className="flex flex-col justify-center items-center bg-modalBlur absolute min-h-[100px] top-0 left-0 z-[350] w-full h-full">
-        {console.log("Component Loading: " , componentLoading)}
         <Oval
           height={56}
           width={56}
