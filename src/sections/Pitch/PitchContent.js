@@ -86,7 +86,7 @@ const PitchContent = ({loggedIn}) => {
 
 
   return (
-    <div className='relative z-20 w-full bg-[#F2F1E8]' id='pricing'>
+    <div className='relative z-20 w-full bg-white' id='pricing'>
       <div className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 desktop:px-0 py-[40px] tablet:py-[80px] laptop:py-[100px]'>
         
         <div className='flex flex-col gap-4 tablet:!flex-row tablet:!gap-10 justify-between items-center mb-6'>
@@ -103,7 +103,7 @@ const PitchContent = ({loggedIn}) => {
           <DynamicListComponent loggedIn={loggedIn} />
         </div>
       </div>
-      <div className="absolute bottom-[-20px] left-0 w-full h-16 bg-gradient-to-b from-[rgba(243, 244, 246, 0.3)] to-white  filter blur-md backdrop-blur-md"></div>
+      <div className="absolute bottom-0 tablet:bottom-[50px] laptop:bottom-[70px]  left-0 w-full h-24 bg-gradient-to-b from-[rgba(243, 244, 246, 0.3)] to-white  filter blur-[2px] backdrop-blur-0"></div>
     </div>
   )
 }

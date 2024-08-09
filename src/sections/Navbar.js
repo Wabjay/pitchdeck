@@ -46,7 +46,7 @@ const Navbar = () => {
     }
 
     return (
-        <header className=" w-full bg-white px-4 tablet:px-6 laptop:px-8 xl:px-0 fixed top-0 z-20">
+        <header className=" w-full bg-white px-4 tablet:px-6 laptop:px-8 xl:px-0 fixed top-0 z-40">
             <nav className="sticky top-0 z-10  block items-center  h-[40px] my-[10px]">
                 <div
                     className="flex flex-wrap place-self-center items-center justify-between  w-full laptop:max-w-[1152px] mx-auto">
